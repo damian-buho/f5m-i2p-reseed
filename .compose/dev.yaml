@@ -1,0 +1,67 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+
+---
+name: ${M6E_COMPOSE_PROJECT_NAME}
+services:
+  f5m-i2p-reseed:
+    container_name: ${M6E_CONTAINER_INSTANCE}
+    image: ${M6E_IMAGE_FULLNAME}
+    depends_on:
+      - f5m-i2p-router
+    # Preset: xlarge (4.0c, 8g) — interactive dev shell. Bounded so it can't starve the shared host.
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 8g
+    environment:
+      - LANG
+      - TZ
+      - B19_VERBOSITY=debug
+      - F5M_I2P_RESEED_SIGNER=admin@example.com
+    labels:
+      com.docker.compose.watch: "true"
+    networks:
+      - dev-network
+      - traefik-network
+    volumes:
+      # The sibling router writes its netDb here; the reseed server serves it.
+      # Both mount the SAME path (/app/.i2p) — that is the router's default
+      # config dir, so no path translation is needed on either side.
+      - i2p-shared-config:/app/.i2p
+      # Persists the SU3 signing key (${XDG_DATA_HOME}/keys) across restarts
+      - i2p-reseed-data:/app/data
+      - /etc/localtime:/etc/localtime:ro
+    tmpfs:
+      - /tmp:exec,mode=1777,size=128m
+
+  # Sibling I2P router (f5m/i2p) whose netDb feeds the reseed server through
+  # the shared volume. Console stays internal; only the shared volume matters.
+  f5m-i2p-router:
+    image: ${DESTINATION_DOCKER_REGISTRY:-registry.invalid}/f5m/i2p:${M6E_BASE_IMAGE_DEFAULT_VERSION:-latest}
+    # Preset: medium (1.0c, 1g) — router JVM is capped at 256m heap.
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1g
+    environment:
+      - LANG
+      - TZ
+    networks:
+      - dev-network
+    volumes:
+      - i2p-shared-config:/app/.i2p
+      - /etc/localtime:/etc/localtime:ro
+networks:
+  dev-network:
+    name: ${M6E_NETWORK}
+    external: true
+  traefik-network:
+    name: traefik-network
+    external: true
+volumes:
+  i2p-shared-config: null
+  i2p-reseed-data: null

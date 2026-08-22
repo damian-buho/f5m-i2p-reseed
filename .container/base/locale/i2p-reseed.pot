@@ -1,0 +1,81 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+#
+# SPDX-License-Identifier: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: i2p-reseed development\n"
+"Report-Msgid-Bugs-To: https://codeberg.org/f5m/i2p-reseed/issues\n"
+"POT-Creation-Date: 2026-08-22 19:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .container/compile-go/build.d/compile-go/post/100-download-source.sh:9
+msgid "Extract %s/%s"
+msgstr ""
+
+#: .container/compile-go/build.d/compile-go/post/500-build-reseed-tools.sh:9
+msgid "Download modules"
+msgstr ""
+
+#: .container/compile-go/build.d/compile-go/post/500-build-reseed-tools.sh:12
+msgid "Build"
+msgstr ""
+
+#: .container/compile-go/build.d/compile-go/post/500-build-reseed-tools.sh:17
+msgid "Make directory in export"
+msgstr ""
+
+#: .container/compile-go/build.d/compile-go/post/500-build-reseed-tools.sh:20
+msgid "Copy executable to export"
+msgstr ""
+
+#: .container/user/entrypoint.d/5000-start.sh:11
+msgid ""
+"F5M_I2P_RESEED_SIGNER is required (su3 signing ID, ex. admin@example.com)"
+msgstr ""
+
+#: .container/user/entrypoint.d/5000-start.sh:18
+msgid "Starting reseed server on %s:%s (signer %s)"
+msgstr ""
+
+#: .container/user/healthcheck.d/100-check-reseed-health.sh:18
+msgid "Reseed server healthy on port %s (HTTP %s)"
+msgstr ""
+
+#: .container/user/healthcheck.d/100-check-reseed-health.sh:22
+msgid "Reseed server unhealthy on port %s (HTTP %s)"
+msgstr ""
+
+#: .container/user/bootstrap.d/100-generate-keys.sh:12
+msgid "F5M_I2P_RESEED_SIGNER is empty, skipping key generation"
+msgstr ""
+
+#: .container/user/bootstrap.d/100-generate-keys.sh:25
+msgid "Signing key already present at %s"
+msgstr ""
+
+#: .container/user/bootstrap.d/100-generate-keys.sh:29
+msgid "Generating SU3 signing key for %s in %s"
+msgstr ""
+
+#: .container/user/bootstrap.d/100-generate-keys.sh:38
+msgid "Key generation failed, no key at %s"
+msgstr ""
+
+#: .container/user/bootstrap.d/100-generate-keys.sh:44
+msgid "Signing key ready at %s — publish %s to register the reseed server"
+msgstr ""
+
+#: .container/user/test.d/1500-verify-binary.sh:14
+msgid "reseed-tools binary not found"
+msgstr ""
+
+#: .container/user/test.d/1500-verify-binary.sh:18
+msgid "reseed-tools binary exists"
+msgstr ""

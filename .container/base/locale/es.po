@@ -1,0 +1,82 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+# Copyright (C) 2026 THE i2p-reseed'S COPYRIGHT HOLDER
+#
+# SPDX-License-Identifier: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: i2p-reseed development\n"
+"Report-Msgid-Bugs-To: https://codeberg.org/f5m/i2p-reseed/issues\n"
+"POT-Creation-Date: 2026-08-22 19:13+0000\n"
+"PO-Revision-Date: 2026-08-22 19:13+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .container/compile-go/build.d/compile-go/post/100-download-source.sh:9
+msgid "Extract %s/%s"
+msgstr "Extraer %s/%s"
+
+#: .container/compile-go/build.d/compile-go/post/500-build-reseed-tools.sh:9
+msgid "Download modules"
+msgstr "Descargar módulos"
+
+#: .container/compile-go/build.d/compile-go/post/500-build-reseed-tools.sh:12
+msgid "Build"
+msgstr "Compilar"
+
+#: .container/compile-go/build.d/compile-go/post/500-build-reseed-tools.sh:17
+msgid "Make directory in export"
+msgstr "Crear directorio en export"
+
+#: .container/compile-go/build.d/compile-go/post/500-build-reseed-tools.sh:20
+msgid "Copy executable to export"
+msgstr "Copiar ejecutable a export"
+
+#: .container/user/entrypoint.d/5000-start.sh:11
+msgid ""
+"F5M_I2P_RESEED_SIGNER is required (su3 signing ID, ex. admin@example.com)"
+msgstr "F5M_I2P_RESEED_SIGNER es obligatorio (ID de firma su3, ej. admin@example.com)"
+
+#: .container/user/entrypoint.d/5000-start.sh:18
+msgid "Starting reseed server on %s:%s (signer %s)"
+msgstr "Iniciando servidor reseed en %s:%s (firmante %s)"
+
+#: .container/user/healthcheck.d/100-check-reseed-health.sh:18
+msgid "Reseed server healthy on port %s (HTTP %s)"
+msgstr "Servidor reseed sano en el puerto %s (HTTP %s)"
+
+#: .container/user/healthcheck.d/100-check-reseed-health.sh:22
+msgid "Reseed server unhealthy on port %s (HTTP %s)"
+msgstr "Servidor reseed no sano en el puerto %s (HTTP %s)"
+
+#: .container/user/bootstrap.d/100-generate-keys.sh:12
+msgid "F5M_I2P_RESEED_SIGNER is empty, skipping key generation"
+msgstr "F5M_I2P_RESEED_SIGNER está vacío, se omite la generación de claves"
+
+#: .container/user/bootstrap.d/100-generate-keys.sh:25
+msgid "Signing key already present at %s"
+msgstr "La clave de firma ya existe en %s"
+
+#: .container/user/bootstrap.d/100-generate-keys.sh:29
+msgid "Generating SU3 signing key for %s in %s"
+msgstr "Generando clave de firma SU3 para %s en %s"
+
+#: .container/user/bootstrap.d/100-generate-keys.sh:38
+msgid "Key generation failed, no key at %s"
+msgstr "La generación de claves falló, no hay clave en %s"
+
+#: .container/user/bootstrap.d/100-generate-keys.sh:44
+msgid "Signing key ready at %s — publish %s to register the reseed server"
+msgstr "Clave de firma lista en %s — publica %s para registrar el servidor reseed"
+
+#: .container/user/test.d/1500-verify-binary.sh:14
+msgid "reseed-tools binary not found"
+msgstr "Binario reseed-tools no encontrado"
+
+#: .container/user/test.d/1500-verify-binary.sh:18
+msgid "reseed-tools binary exists"
+msgstr "Binario reseed-tools presente"

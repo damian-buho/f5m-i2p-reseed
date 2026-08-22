@@ -1,0 +1,13 @@
+---
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+
+# project-local vulnerability suppressions. Add new ids in id order; fanned out
+# to .trivyignore / .grype.yaml / osv-scanner.toml by `pf-cli bridge` so the
+# three scanners never disagree on whether a known-unfixable vuln gates publish.
+
+org:
+  projectfile:
+    vulnerabilities:
+      suppress: []

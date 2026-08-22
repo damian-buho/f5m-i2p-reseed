@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+
+${XDG_DATA_HOME}
+# I2P router config dir — mountpoint of the shared netDb volume when a
+# sibling f5m/i2p router feeds the reseed server (see .compose/dev.yaml).
+${B19_HOME}/.i2p
