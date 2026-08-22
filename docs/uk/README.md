@@ -20,6 +20,45 @@ pf-cli-managed: yes
 
 Пов’язані проєкти: [F5M/Tor](https://kiota.ch/f5m/tor) | [F5M/I2P](https://kiota.ch/f5m/i2p) | [F5M/Tor Snowflake](https://kiota.ch/f5m/tor-snowflake) | [F5M/OONI Probe](https://kiota.ch/f5m/ooni) | [F5M/Knot](https://kiota.ch/f5m/knot) | [F5M/Radicle](https://kiota.ch/f5m/radicle) | [F5M/Solid](https://kiota.ch/f5m/solid) | [F5M/SSH](https://kiota.ch/f5m/ssh)
 
+## Можливості
+
+- Стійкість до зловживань усталено
+- Свіжі пакети seeds без перезапусків
+- Готовий до зворотного проксі
+- Самостворювані ключі підпису
+
+### Успадковано від B19/Ubuntu
+
+- Постійний APT-кеш між збираннями
+- Керування службовими процесами зі спрямуванням журналів (b19-exec)
+- Кешовані завантаження артефактів із перевіркою цілісності (b19-fetch)
+- Вимірюване виконання команд зі звітуванням про збої (b19-run)
+- Одноразова ініціалізація (bootstrap.d)
+- Модульні хуки збирання (build.d)
+- Автоматичне визначення кількості CPU (NUMPROCS)
+- Декларативне керування залежностями (b19-deps)
+- Підключована система запуску (entrypoint.d)
+- Перемикачі функцій для всіх підсистем
+- Вбудований моніторинг стану (healthcheck.d)
+- Багатомовний вивід shell (b19-i18n)
+- Відстеження лініжу образу
+- Структуроване журналування з фільтром за рівнем (b19-log)
+- Контейнер без прав root за замовчуванням
+- Підтримка ізольованих від інтернету (air-gapped/offline) збирання й виконання
+- Ін’єкція оверлеїв під час виконання
+- Відтворюваний базовий образ (зафіксований за digest)
+- Перевірка портів
+- Уніфіковане сімейство ранерів життєвого циклу
+- Автозавантаження Docker-секретів (secrets)
+- Хуки інтерактивної shell (shell.d)
+- Плавна обробка сигналів
+- Шаблони конфігурації Jinja2 (minijinja-cli)
+- Вбудований тестовий фреймворк (test.d)
+- Попередньо встановлені службові інструменти
+- Шляхи XDG Base Directory
+
+Див. [FEATURES.md](FEATURES.md), щоб переглянути повний перелік.
+
 ## Що надає цей проєкт
 
 - **Образ контейнера** `ghcr.io/damian-buho/f5m/i2p-reseed:latest`
@@ -73,6 +112,10 @@ make dc-down
 - `make audited` — Re-scan the pinned dependencies and published artifacts for new vulnerabilities
 - `make check-outdated` — Report every pinned dependency that lags upstream
 - `make ready-to-publish` — Run the pseudo-CI pipeline locally — build, test and scan, without publishing
+
+## Дорожня карта
+
+Див. [ROADMAP.md](../../ROADMAP.md), щоб дізнатися про заплановане.
 
 ## Політики
 

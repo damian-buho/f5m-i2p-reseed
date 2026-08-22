@@ -18,6 +18,45 @@ Community-maintained distribution of the I2P reseed server based on B19/Go
 
 Related projects: [F5M/Tor](https://kiota.ch/f5m/tor) | [F5M/I2P](https://kiota.ch/f5m/i2p) | [F5M/Tor Snowflake](https://kiota.ch/f5m/tor-snowflake) | [F5M/OONI Probe](https://kiota.ch/f5m/ooni) | [F5M/Knot](https://kiota.ch/f5m/knot) | [F5M/Radicle](https://kiota.ch/f5m/radicle) | [F5M/Solid](https://kiota.ch/f5m/solid) | [F5M/SSH](https://kiota.ch/f5m/ssh)
 
+## Features
+
+- Abuse-resistant by default
+- Fresh seed bundles without restarts
+- Reverse-proxy ready
+- Self-bootstrapping signing keys
+
+### Inherited from B19/Ubuntu
+
+- Persistent APT cache across builds
+- Service process management with log routing (b19-exec)
+- Cached artifact downloads with integrity verification (b19-fetch)
+- Timed command execution with failure reporting (b19-run)
+- Run-once initialization (bootstrap.d)
+- Modular build hooks (build.d)
+- Automatic CPU count detection (NUMPROCS)
+- Declarative dependency management (b19-deps)
+- Pluggable startup system (entrypoint.d)
+- Feature toggles for all subsystems
+- Built-in health monitoring (healthcheck.d)
+- Multilingual shell output (b19-i18n)
+- Image lineage tracking
+- Structured, level-filtered logging (b19-log)
+- Non-root container by default
+- Air-gapped / offline build and runtime support
+- Runtime overlay injection
+- Reproducible base image (pinned by digest)
+- Port validation
+- Unified lifecycle runner family
+- Docker secrets auto-loading (secrets)
+- Interactive shell hooks (shell.d)
+- Graceful signal handling
+- Jinja2 configuration templates (minijinja-cli)
+- Built-in test framework (test.d)
+- Pre-installed utility tools
+- XDG Base Directory paths
+
+See [FEATURES.md](FEATURES.md) for the full list.
+
 ## What this provides
 
 - **Container image** `ghcr.io/damian-buho/f5m/i2p-reseed:latest`
@@ -71,6 +110,10 @@ Pipeline entry points:
 - `make audited` — Re-scan the pinned dependencies and published artifacts for new vulnerabilities
 - `make check-outdated` — Report every pinned dependency that lags upstream
 - `make ready-to-publish` — Run the pseudo-CI pipeline locally — build, test and scan, without publishing
+
+## Roadmap
+
+See the [ROADMAP.md](ROADMAP.md) for what is planned next.
 
 ## Policies
 

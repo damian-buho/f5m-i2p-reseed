@@ -19,6 +19,9 @@ includes:
   - .makefile/b19/ci.yaml
   - .makefile/b19/images/go.yaml
   - .makefile/b19/images/ubuntu.yaml
+  - .makefile/library/vulnerabilities/go/golang.org-x-crypto.yaml
+  - .makefile/library/vulnerabilities/go/golang.org-x-net.yaml
+  - .makefile/library/vulnerabilities/go/golang.org-x-text.yaml
   - .projectfile/vulnerabilities.yaml
   - https://kiota.ch/damian-buho/metadata/raw/branch/main/include.yaml
   - https://kiota.ch/f5m/metadata/raw/branch/main/include.yaml

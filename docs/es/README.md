@@ -20,6 +20,45 @@ Distribución del servidor de reseed de I2P mantenida por la comunidad, basada e
 
 Proyectos relacionados: [F5M/Tor](https://kiota.ch/f5m/tor) | [F5M/I2P](https://kiota.ch/f5m/i2p) | [F5M/Tor Snowflake](https://kiota.ch/f5m/tor-snowflake) | [F5M/OONI Probe](https://kiota.ch/f5m/ooni) | [F5M/Knot](https://kiota.ch/f5m/knot) | [F5M/Radicle](https://kiota.ch/f5m/radicle) | [F5M/Solid](https://kiota.ch/f5m/solid) | [F5M/SSH](https://kiota.ch/f5m/ssh)
 
+## Características
+
+- Resistente al abuso por defecto
+- Paquetes de seeds frescos sin reinicios
+- Listo para proxy inverso
+- Claves de firma auto-generadas
+
+### Heredado de B19/Ubuntu
+
+- Caché APT persistente entre compilaciones
+- Gestión de procesos de servicio con enrutado de logs (b19-exec)
+- Descargas de artefactos con caché y verificación de integridad (b19-fetch)
+- Ejecución de comandos temporizada con informe de fallos (b19-run)
+- Inicialización de una sola vez (bootstrap.d)
+- Hooks de compilación modulares (build.d)
+- Detección automática del número de CPUs (NUMPROCS)
+- Gestión declarativa de dependencias (b19-deps)
+- Sistema de arranque conectable (entrypoint.d)
+- Conmutadores de funcionalidades para todos los subsistemas
+- Monitorización de estado integrada (healthcheck.d)
+- Salida de shell multilingüe (b19-i18n)
+- Seguimiento del linaje de la imagen
+- Logging estructurado con filtro por nivel (b19-log)
+- Contenedor sin privilegios de root por defecto
+- Soporte de compilación y runtime aislados de internet (air-gapped/offline)
+- Inyección de overlays en runtime
+- Imagen base reproducible (fijada por digest)
+- Validación de puertos
+- Familia unificada de runners del ciclo de vida
+- Autocarga de secretos de Docker (secrets)
+- Hooks de shell interactivo (shell.d)
+- Gestión elegante de señales
+- Plantillas de configuración Jinja2 (minijinja-cli)
+- Framework de tests integrado (test.d)
+- Herramientas de utilidad preinstaladas
+- Rutas XDG Base Directory
+
+Consulta [FEATURES.md](FEATURES.md) para ver la lista completa.
+
 ## Qué entrega este proyecto
 
 - **Imagen de contenedor** `ghcr.io/damian-buho/f5m/i2p-reseed:latest`
@@ -73,6 +112,10 @@ Puntos de entrada de la canalización:
 - `make audited` — Re-scan the pinned dependencies and published artifacts for new vulnerabilities
 - `make check-outdated` — Report every pinned dependency that lags upstream
 - `make ready-to-publish` — Run the pseudo-CI pipeline locally — build, test and scan, without publishing
+
+## Hoja de ruta
+
+Consulta la [ROADMAP.md](../../ROADMAP.md) para ver lo que viene.
 
 ## Políticas
 
