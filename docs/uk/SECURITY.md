@@ -102,6 +102,8 @@ F5M/I2P Reseed наразі не має програми винагород за
 | GO-2026-5023 | blocked by upstream |
 | CVE-2026-46597 | blocked by upstream |
 | GO-2026-5013 | blocked by upstream |
+| CVE-2026-56854 | blocked by upstream |
+| GO-2026-6303 | blocked by upstream |
 | CVE-2026-46600 | blocked by upstream |
 | CVE-2026-25681 | blocked by upstream |
 | CVE-2026-27136 | blocked by upstream |
