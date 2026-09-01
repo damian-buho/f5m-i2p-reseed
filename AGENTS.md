@@ -40,9 +40,18 @@ Every `reseed-tools` subcommand probes `$HOME/.i2p` at startup (`getmeanetdb.Whe
 - `i2p-shared-config` → `/app/.i2p` (shared with sibling router: its config + the served netDb)
 - `i2p-reseed-data` → `/app/data` (= `${XDG_DATA_HOME}`) — persists the SU3 signing key (`keys/`)
 
-## Healthcheck nuance
+## Healthcheck
 
-The homepage is rate-limited per IP; the container’s own healthcheck exhausts its localhost budget (~40/h at 30 s cadence). `100-check-reseed-health.sh` therefore treats HTTP 429 as healthy — only a non-answer or 5xx fails.
+`1100-check-reseed-health.sh` fetches `/i2pseeds.su3` with the I2P router User-Agent (`Wget/1.11.4`, the upstream `I2pUserAgent` constant — anything else is 403 by `verifyMiddleware`) and validates the response:
+
+1. HTTP 200, `Version` response header non-empty (the right binary answered).
+2. SU3 magic `I2Psu3` (hex `493250737533`) at bytes 0..5 — wrong header fails.
+3. `FileType = 0` (ZIP) at byte 25 and `ContentType = 3` (Reseed) at byte 27 — wrong payload fails.
+4. ZIP local-file-header magic `PK\x03\x04` (`504b0304`) somewhere in the first 256 bytes — the embedded payload is a real routerInfo archive, not garbage.
+
+A non-200 response (e.g. 500 when the SU3 cache is empty before the first rebuild, the `F5M_I2P_RESEED_RATELIMIT` headroom aside) fails closed — a reseed server that boots but serves nothing is broken from the user’s perspective, exactly the regression to catch.
+
+The SU3 rate limit must allow a probe every 30 s from localhost. `5000-start.sh` therefore scales `--ratelimit` by `NUMPROCS` (`SU3_RATELIMIT = F5M_I2P_RESEED_RATELIMIT × NUMPROCS`); `--ratelimitweb` and the global limit stay at their declared values (public-facing).
 
 ## Not included
 
