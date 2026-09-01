@@ -17,6 +17,12 @@
 
     b19-log info "RESEED" "$(_p "Starting reseed server on %s:%s (signer %s)" "${F5M_I2P_RESEED_IP}" "${F5M_I2P_RESEED_PORT}" "${F5M_I2P_RESEED_SIGNER}")"
 
+    # SU3 rate-limit scales with NUMPROCS so the in-container healthcheck (30 s
+    # cadence, /i2pseeds.su3) does not exhaust the localhost budget at 4/h.
+    # Web and global limits stay at their declared values — public-facing.
+    SU3_RATELIMIT=$(( F5M_I2P_RESEED_RATELIMIT * NUMPROCS ))
+    b19-log info "RESEED" "$(_p "SU3 rate limit %s/h (%s × NUMPROCS %s)" "${SU3_RATELIMIT}" "${F5M_I2P_RESEED_RATELIMIT}" "${NUMPROCS}")"
+
     # --yes keeps first boot non-interactive (self-signed TLS generation)
     args=(--yes
           --signer="${F5M_I2P_RESEED_SIGNER}"
@@ -28,7 +34,7 @@
           --numSu3 "${F5M_I2P_RESEED_NUM_SU3}"
           --interval="${F5M_I2P_RESEED_INTERVAL}"
           --routerInfoAge="${F5M_I2P_RESEED_ROUTER_INFO_AGE}"
-          --ratelimit "${F5M_I2P_RESEED_RATELIMIT}"
+          --ratelimit "${SU3_RATELIMIT}"
           --ratelimitweb "${F5M_I2P_RESEED_RATELIMITWEB}")
 
     if [ "${F5M_I2P_RESEED_TRUST_PROXY}" = "true" ]
