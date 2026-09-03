@@ -31,6 +31,8 @@ Routes: `/` web homepage (rate-limited 40/h per IP), `/i2pseeds.su3` seed bundle
 
 The server signs whatever it finds in `F5M_I2P_RESEED_NETDB` (default `${B19_HOME}/.i2p/netDb` — exactly where a co-running router writes). The dev compose runs a sibling `f5m/i2p` router and mounts ONE named volume (`i2p-shared-config`) at `/app/.i2p` in BOTH containers — that dir is the router’s default config dir, so no path translation. Alternatively mount any populated netDb at the same path, or let upstream pull one (`F5M_I2P_RESEED_ARGS="--share-peer=…"`; needs SAM). An empty netDb starts fine but serves nothing.
 
+`150-seed-netdb.sh` synthesises a minimal netDb when the real one is empty so the strict `/i2pseeds.su3` healthcheck can still pass in the pipeline (which has no sibling router). It counts live `routerInfo-*.dat` files younger than `F5M_I2P_RESEED_ROUTER_INFO_AGE` and, if below `ceil(F5M_I2P_RESEED_NUM_RI × 4/3) + 4`, generates the shortfall via the `reseed-fixture` helper (valid Ed25519 RIs with `caps=R` / `router.version=0.9.67`, i.e. `Reachable` + `GoodVersion` + `UnCongested`). In dev the shared volume is already populated, so this is a no-op (flock-guarded, idempotent).
+
 ## Upstream startup probe quirk
 
 Every `reseed-tools` subcommand probes `$HOME/.i2p` at startup (`getmeanetdb.WhereIstheNetDB`) and Fatals when absent — even `version`. `volumes.deps` therefore pre-creates `${B19_HOME}/.i2p` at build time; it doubles as the shared-volume mountpoint above.
