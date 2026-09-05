@@ -4,9 +4,9 @@
 # SPDX-License-Identifier: MIT
 msgid ""
 msgstr ""
-"Project-Id-Version: i2p-reseed 1.1.1\n"
+"Project-Id-Version: i2p-reseed 1.1.2\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/f5m/i2p-reseed/issues\n"
-"POT-Creation-Date: 2026-09-05 02:50+0000\n"
+"POT-Creation-Date: 2026-09-05 03:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,45 +73,45 @@ msgstr ""
 msgid "SU3 rate limit %s/h"
 msgstr ""
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:23
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:26
 msgid "Reseed health cache lock timed out on %s"
 msgstr ""
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:32
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:35
 msgid "%s (cached, %ss old)"
 msgstr ""
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:66
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:71
 msgid ""
 "Reseed server unhealthy: /i2pseeds.su3 returned HTTP %s (size %s, reseed-"
 "tools %s)"
 msgstr ""
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:70
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:75
 msgid "Reseed server unhealthy: missing Version header (HTTP %s, size %s)"
 msgstr ""
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:74
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:79
 msgid "Reseed server unhealthy: SU3 too small (%s bytes)"
 msgstr ""
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:89
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:94
 msgid "Reseed server unhealthy: bad SU3 magic on /i2pseeds.su3 (size %s)"
 msgstr ""
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:93
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:98
 msgid "Reseed server unhealthy: expected ZIP (0), got FileType %s"
 msgstr ""
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:97
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:102
 msgid "Reseed server unhealthy: expected Reseed (3), got ContentType %s"
 msgstr ""
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:105
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:110
 msgid "Reseed server unhealthy: SU3 body is not a ZIP (size %s)"
 msgstr ""
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:108
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:113
 msgid "Reseed server healthy on port %s (HTTP 200, %s bytes, reseed-tools %s)"
 msgstr ""
 

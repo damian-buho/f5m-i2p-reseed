@@ -14,7 +14,10 @@ set -o pipefail
   # I2P router draws from. Docker probes this script every 10 s (360/h); a
   # real fetch on every probe drains localhost's bucket within a minute and
   # the server starts answering 429, which reads as a false unhealthy. Cache
-  # the verdict and only perform a real fetch once per rate-limit window.
+  # only a SUCCESSFUL fetch and skip the real request while it is fresh — a
+  # failure (startup, netDb empty, connection refused) never reaches the
+  # rate limiter and costs it nothing, so it is always retried for real,
+  # never cached, keeping outage detection fast.
   CACHE_FILE="${B19_TEMP_PATH:-/tmp}/.reseed-health-cache"
   CACHE_TTL=$(( 3600 / F5M_I2P_RESEED_RATELIMIT + 30 ))
 
@@ -29,8 +32,8 @@ set -o pipefail
     . "${CACHE_FILE}"
     NOW=$(date +%s)
     if [ -n "${CACHE_AT:-}" ] && [ $(( NOW - CACHE_AT )) -lt "${CACHE_TTL}" ]; then
-      b19-log "${CACHE_LEVEL}" "HEALTH.D" "$(_p "%s (cached, %ss old)" "${CACHE_LOG}" "$(( NOW - CACHE_AT ))")"
-      exit "${CACHE_EXIT}"
+      b19-log good "HEALTH.D" "$(_p "%s (cached, %ss old)" "${CACHE_LOG}" "$(( NOW - CACHE_AT ))")"
+      exit 0
     fi
   fi
 
@@ -50,15 +53,17 @@ set -o pipefail
   VERSION=$(awk 'tolower($1) == "version:" { sub(/\r$/, "", $2); print $2; exit }' "${TMP}.h" 2>/dev/null)
   SIZE=$(stat -c '%s' "${TMP}" 2>/dev/null || echo 0)
 
-  # Logs the verdict, caches it for CACHE_TTL, then exits with $1.
+  # Logs the verdict; only a success ($1=0) is cached for CACHE_TTL.
   cache_and_exit() {
-    {
-      printf 'CACHE_AT=%s\n' "$(date +%s)"
-      printf 'CACHE_LEVEL=%s\n' "$([ "$1" = 0 ] && echo good || echo bad)"
-      printf 'CACHE_LOG=%q\n' "$2"
-      printf 'CACHE_EXIT=%s\n' "$1"
-    } > "${CACHE_FILE}"
-    b19-log "$([ "$1" = 0 ] && echo good || echo bad)" "HEALTH.D" "$2"
+    if [ "$1" = 0 ]; then
+      {
+        printf 'CACHE_AT=%s\n' "$(date +%s)"
+        printf 'CACHE_LOG=%q\n' "$2"
+      } > "${CACHE_FILE}"
+      b19-log good "HEALTH.D" "$2"
+    else
+      b19-log bad "HEALTH.D" "$2"
+    fi
     exit "$1"
   }
 
