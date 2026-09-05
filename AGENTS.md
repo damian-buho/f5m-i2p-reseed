@@ -51,9 +51,9 @@ Every `reseed-tools` subcommand probes `$HOME/.i2p` at startup (`getmeanetdb.Whe
 3. `FileType = 0` (ZIP) at byte 25 and `ContentType = 3` (Reseed) at byte 27 — wrong payload fails.
 4. ZIP local-file-header magic `PK\x03\x04` (`504b0304`) somewhere in the first 256 bytes — the embedded payload is a real routerInfo archive, not garbage.
 
-A non-200 response (e.g. 500 when the SU3 cache is empty before the first rebuild, the `F5M_I2P_RESEED_RATELIMIT` headroom aside) fails closed — a reseed server that boots but serves nothing is broken from the user’s perspective, exactly the regression to catch.
+A non-200 response (e.g. 500 when the SU3 cache is empty before the first rebuild) fails closed — a reseed server that boots but serves nothing is broken from the user’s perspective, exactly the regression to catch.
 
-The SU3 rate limit must allow a probe every 30 s from localhost. `5000-start.sh` therefore scales `--ratelimit` by `NUMPROCS` (`SU3_RATELIMIT = F5M_I2P_RESEED_RATELIMIT × NUMPROCS`); `--ratelimitweb` and the global limit stay at their declared values (public-facing).
+`--ratelimit` is upstream’s public per-IP anti-abuse bucket for `/i2pseeds.su3` (`throttled`, `VaryBy: RemoteAddr`) — the same bucket a real I2P router draws from. `5000-start.sh` passes it through unscaled; it must never be multiplied by `NUMPROCS` or any other infra knob, since that would silently change the public rate limit for every client, not just localhost. Docker’s inherited `HEALTHCHECK` (`b19/ubuntu`, `--interval=10s`) would otherwise drain that bucket from localhost alone within a minute and read the resulting `429` as unhealthy — `1100-check-reseed-health.sh` avoids this by caching its verdict for `3600 / F5M_I2P_RESEED_RATELIMIT` seconds (plus margin) and only performing a real fetch once per window.
 
 ## Not included
 

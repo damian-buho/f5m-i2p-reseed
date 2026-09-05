@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i2p-reseed development\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/f5m/i2p-reseed/issues\n"
-"POT-Creation-Date: 2026-08-22 19:13+0000\n"
+"POT-Creation-Date: 2026-09-05 02:50+0000\n"
 "PO-Revision-Date: 2026-08-22 19:13+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,6 +15,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .container/base/build.d/base/post/010-i2p-probe-marker.sh:8
+msgid "Creating I2P probe marker"
+msgstr ""
+
+#: .container/base/build.d/base/post/010-i2p-probe-marker.sh:11
+msgid "Marking I2P probe file executable"
+msgstr ""
 
 #: .container/compile-go/build.d/compile-go/post/100-download-source.sh:9
 msgid "Extract %s/%s"
@@ -29,6 +37,7 @@ msgid "Build"
 msgstr "Compilar"
 
 #: .container/compile-go/build.d/compile-go/post/500-build-reseed-tools.sh:17
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:167
 msgid "Make directory in export"
 msgstr "Crear directorio en export"
 
@@ -36,42 +45,131 @@ msgstr "Crear directorio en export"
 msgid "Copy executable to export"
 msgstr "Copiar ejecutable a export"
 
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:10
+msgid "Building reseed-fixture helper"
+msgstr ""
+
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:162
+msgid "Compile reseed-fixture"
+msgstr ""
+
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:170
+#, fuzzy
+msgid "Copy fixture helper to export"
+msgstr "Copiar ejecutable a export"
+
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:173
+msgid "Clean fixture source"
+msgstr ""
+
 #: .container/user/entrypoint.d/5000-start.sh:11
 msgid ""
 "F5M_I2P_RESEED_SIGNER is required (su3 signing ID, ex. admin@example.com)"
-msgstr "F5M_I2P_RESEED_SIGNER es obligatorio (ID de firma su3, ej. admin@example.com)"
+msgstr ""
+"F5M_I2P_RESEED_SIGNER es obligatorio (ID de firma su3, ej. admin@example.com)"
 
 #: .container/user/entrypoint.d/5000-start.sh:18
 msgid "Starting reseed server on %s:%s (signer %s)"
 msgstr "Iniciando servidor reseed en %s:%s (firmante %s)"
 
-#: .container/user/healthcheck.d/100-check-reseed-health.sh:18
-msgid "Reseed server healthy on port %s (HTTP %s)"
-msgstr "Servidor reseed sano en el puerto %s (HTTP %s)"
+#: .container/user/entrypoint.d/5000-start.sh:24
+msgid "SU3 rate limit %s/h"
+msgstr "Límite de tasa SU3: %s/h"
 
-#: .container/user/healthcheck.d/100-check-reseed-health.sh:22
-msgid "Reseed server unhealthy on port %s (HTTP %s)"
-msgstr "Servidor reseed no sano en el puerto %s (HTTP %s)"
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:23
+msgid "Reseed health cache lock timed out on %s"
+msgstr "Se agotó el tiempo de espera del bloqueo de caché de salud de reseed en %s"
 
-#: .container/user/bootstrap.d/100-generate-keys.sh:12
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:32
+msgid "%s (cached, %ss old)"
+msgstr "%s (en caché, con %ss de antigüedad)"
+
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:66
+msgid ""
+"Reseed server unhealthy: /i2pseeds.su3 returned HTTP %s (size %s, reseed-"
+"tools %s)"
+msgstr ""
+"Servidor reseed no sano: /i2pseeds.su3 devolvió HTTP %s (tamaño %s, reseed-"
+"tools %s)"
+
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:70
+msgid "Reseed server unhealthy: missing Version header (HTTP %s, size %s)"
+msgstr "Servidor reseed no sano: falta la cabecera Version (HTTP %s, tamaño %s)"
+
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:74
+msgid "Reseed server unhealthy: SU3 too small (%s bytes)"
+msgstr "Servidor reseed no sano: SU3 demasiado pequeño (%s bytes)"
+
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:89
+msgid "Reseed server unhealthy: bad SU3 magic on /i2pseeds.su3 (size %s)"
+msgstr "Servidor reseed no sano: número mágico SU3 incorrecto en /i2pseeds.su3 (tamaño %s)"
+
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:93
+msgid "Reseed server unhealthy: expected ZIP (0), got FileType %s"
+msgstr "Servidor reseed no sano: se esperaba ZIP (0), se obtuvo FileType %s"
+
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:97
+msgid "Reseed server unhealthy: expected Reseed (3), got ContentType %s"
+msgstr "Servidor reseed no sano: se esperaba Reseed (3), se obtuvo ContentType %s"
+
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:105
+msgid "Reseed server unhealthy: SU3 body is not a ZIP (size %s)"
+msgstr "Servidor reseed no sano: el cuerpo SU3 no es un ZIP (tamaño %s)"
+
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:108
+msgid "Reseed server healthy on port %s (HTTP 200, %s bytes, reseed-tools %s)"
+msgstr "Servidor reseed sano en el puerto %s (HTTP 200, %s bytes, reseed-tools %s)"
+
+#: .container/user/bootstrap.d/100-generate-keys.sh:16
 msgid "F5M_I2P_RESEED_SIGNER is empty, skipping key generation"
 msgstr "F5M_I2P_RESEED_SIGNER está vacío, se omite la generación de claves"
 
-#: .container/user/bootstrap.d/100-generate-keys.sh:25
+#: .container/user/bootstrap.d/100-generate-keys.sh:29
 msgid "Signing key already present at %s"
 msgstr "La clave de firma ya existe en %s"
 
-#: .container/user/bootstrap.d/100-generate-keys.sh:29
+#: .container/user/bootstrap.d/100-generate-keys.sh:33
 msgid "Generating SU3 signing key for %s in %s"
 msgstr "Generando clave de firma SU3 para %s en %s"
 
-#: .container/user/bootstrap.d/100-generate-keys.sh:38
+#: .container/user/bootstrap.d/100-generate-keys.sh:42
 msgid "Key generation failed, no key at %s"
 msgstr "La generación de claves falló, no hay clave en %s"
 
-#: .container/user/bootstrap.d/100-generate-keys.sh:44
+#: .container/user/bootstrap.d/100-generate-keys.sh:48
 msgid "Signing key ready at %s — publish %s to register the reseed server"
-msgstr "Clave de firma lista en %s — publica %s para registrar el servidor reseed"
+msgstr ""
+"Clave de firma lista en %s — publica %s para registrar el servidor reseed"
+
+#: .container/user/bootstrap.d/150-seed-netdb.sh:56
+msgid "netDb at %s: have %s valid routerInfos, need %s (numRi %s)"
+msgstr ""
+
+#: .container/user/bootstrap.d/150-seed-netdb.sh:59
+msgid "netDb already populated (%s/%s) — skipping seed"
+msgstr ""
+
+#: .container/user/bootstrap.d/150-seed-netdb.sh:68
+msgid "Seeding netDb with %s synthetic routerInfos via reseed-fixture"
+msgstr ""
+
+#: .container/user/bootstrap.d/150-seed-netdb.sh:74
+msgid "netDb populated while waiting for lock (%s/%s)"
+msgstr ""
+
+#: .container/user/bootstrap.d/150-seed-netdb.sh:80
+msgid "reseed-fixture failed with %s"
+msgstr ""
+
+#: .container/user/bootstrap.d/150-seed-netdb.sh:87
+msgid "netDb seeded: %s valid routerInfos at %s"
+msgstr ""
+
+#: .container/user/bootstrap.d/150-seed-netdb.sh:91
+msgid ""
+"reseed-fixture not found, skipping synthetic netDb seed — healthcheck may "
+"fail on empty netDb"
+msgstr ""
 
 #: .container/user/test.d/1500-verify-binary.sh:14
 msgid "reseed-tools binary not found"
