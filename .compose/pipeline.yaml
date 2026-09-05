@@ -20,11 +20,8 @@ services:
       - LANG
       - TZ
       - F5M_I2P_RESEED_SIGNER=admin@example.com
-    volumes:
-      - type: tmpfs
-        target: /app/data
-        tmpfs:
-          size: 134217728
+    tmpfs:
+      - /app/data:mode=1777,size=134217728
 networks:
   dev-network:
     name: ${M6E_COMPOSE_PROJECT_NAME}-network
