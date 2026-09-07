@@ -4,9 +4,9 @@
 # SPDX-License-Identifier: MIT
 msgid ""
 msgstr ""
-"Project-Id-Version: i2p-reseed 1.1.2\n"
+"Project-Id-Version: i2p-reseed 1.1.3\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/f5m/i2p-reseed/issues\n"
-"POT-Creation-Date: 2026-09-05 03:05+0000\n"
+"POT-Creation-Date: 2026-09-07 03:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
