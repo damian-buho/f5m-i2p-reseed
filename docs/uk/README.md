@@ -18,8 +18,6 @@ pf-cli-managed: yes
 
 [![Publish pipeline on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/published.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Vulnerability audit on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/audited.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Dependency freshness on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/check-outdated.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Analysis sweep on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/analyze.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions)
 
-Пов’язані проєкти: [F5M/Tor](https://kiota.ch/f5m/tor) | [F5M/I2P](https://kiota.ch/f5m/i2p) | [F5M/Tor Snowflake](https://kiota.ch/f5m/tor-snowflake) | [F5M/OONI Probe](https://kiota.ch/f5m/ooni) | [F5M/Knot](https://kiota.ch/f5m/knot) | [F5M/Radicle](https://kiota.ch/f5m/radicle) | [F5M/Solid](https://kiota.ch/f5m/solid) | [F5M/SSH](https://kiota.ch/f5m/ssh)
-
 ## Можливості
 
 - Стійкість до зловживань усталено
@@ -59,32 +57,9 @@ pf-cli-managed: yes
 
 Див. [FEATURES.md](FEATURES.md), щоб переглянути повний перелік.
 
-## Що надає цей проєкт
-
-- **Образ контейнера** `ghcr.io/damian-buho/f5m/i2p-reseed:latest`
-- **Образ контейнера** `docker.io/damianbuho/f5m-i2p-reseed:latest`
-
 ## Встановлення
 
-Завантажте опублікований образ контейнера:
-
-### Завантажити з GHCR
-
-```sh
-docker pull ghcr.io/damian-buho/f5m/i2p-reseed:latest
-```
-
-### Завантажити з DockerHub
-
-```sh
-docker pull docker.io/damianbuho/f5m-i2p-reseed:latest
-```
-
-Стабільні випуски також публікують теґи `X.Y.Z`, `X.Y` і `X` — завантажте той рівень точності, який хочете зафіксувати.
-
 Якщо наведені вище реєстри недоступні, завантажте з джерела:
-
-### Завантажити з Kiota
 
 ```sh
 docker pull kiota.ch/f5m/i2p-reseed:latest
@@ -124,6 +99,8 @@ make dc-down
 - [Як отримати підтримку](SUPPORT.md)
 - [Кодекс поведінки](CODE_OF_CONDUCT.md)
 - [Політика щодо ШІ та LLM](AI_POLICY.md)
+
+Пов’язані проєкти: [F5M/Tor](https://kiota.ch/f5m/tor) | [F5M/I2P](https://kiota.ch/f5m/i2p) | [F5M/Tor Snowflake](https://kiota.ch/f5m/tor-snowflake) | [F5M/OONI Probe](https://kiota.ch/f5m/ooni) | [F5M/Knot](https://kiota.ch/f5m/knot) | [F5M/Radicle](https://kiota.ch/f5m/radicle) | [F5M/Solid](https://kiota.ch/f5m/solid) | [F5M/SSH](https://kiota.ch/f5m/ssh)
 
 ## Посилання
 

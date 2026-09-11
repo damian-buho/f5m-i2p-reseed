@@ -16,8 +16,6 @@ Community-maintained distribution of the I2P reseed server based on B19/Go
 
 [![Publish pipeline on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/published.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Vulnerability audit on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/audited.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Dependency freshness on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/check-outdated.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Analysis sweep on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/analyze.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions)
 
-Related projects: [F5M/Tor](https://kiota.ch/f5m/tor) | [F5M/I2P](https://kiota.ch/f5m/i2p) | [F5M/Tor Snowflake](https://kiota.ch/f5m/tor-snowflake) | [F5M/OONI Probe](https://kiota.ch/f5m/ooni) | [F5M/Knot](https://kiota.ch/f5m/knot) | [F5M/Radicle](https://kiota.ch/f5m/radicle) | [F5M/Solid](https://kiota.ch/f5m/solid) | [F5M/SSH](https://kiota.ch/f5m/ssh)
-
 ## Features
 
 - Abuse-resistant by default
@@ -57,32 +55,9 @@ Related projects: [F5M/Tor](https://kiota.ch/f5m/tor) | [F5M/I2P](https://kiota.
 
 See [FEATURES.md](FEATURES.md) for the full list.
 
-## What this provides
-
-- **Container image** `ghcr.io/damian-buho/f5m/i2p-reseed:latest`
-- **Container image** `docker.io/damianbuho/f5m-i2p-reseed:latest`
-
 ## Installation
 
-Pull the published container image:
-
-### Pull from GHCR
-
-```sh
-docker pull ghcr.io/damian-buho/f5m/i2p-reseed:latest
-```
-
-### Pull from DockerHub
-
-```sh
-docker pull docker.io/damianbuho/f5m-i2p-reseed:latest
-```
-
-Stable releases also publish `X.Y.Z`, `X.Y` and `X` tags — pull the precision you want to pin.
-
 If the registries above are unreachable, pull from the origin instead:
-
-### Pull from Kiota
 
 ```sh
 docker pull kiota.ch/f5m/i2p-reseed:latest
@@ -122,6 +97,8 @@ See the [ROADMAP.md](ROADMAP.md) for what is planned next.
 - [Getting support](SUPPORT.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 - [AI and LLM Policy](AI_POLICY.md)
+
+Related projects: [F5M/Tor](https://kiota.ch/f5m/tor) | [F5M/I2P](https://kiota.ch/f5m/i2p) | [F5M/Tor Snowflake](https://kiota.ch/f5m/tor-snowflake) | [F5M/OONI Probe](https://kiota.ch/f5m/ooni) | [F5M/Knot](https://kiota.ch/f5m/knot) | [F5M/Radicle](https://kiota.ch/f5m/radicle) | [F5M/Solid](https://kiota.ch/f5m/solid) | [F5M/SSH](https://kiota.ch/f5m/ssh)
 
 ## Links
 
