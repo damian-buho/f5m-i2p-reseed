@@ -1,8 +1,8 @@
+#!/usr/bin/env bash
+
 # SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
 #
 # SPDX-License-Identifier: MIT
-
-  APP_VERSION="$(decomment < /deps/reseed-tools/version.deps)"
 
   export CGO_ENABLED=0
 

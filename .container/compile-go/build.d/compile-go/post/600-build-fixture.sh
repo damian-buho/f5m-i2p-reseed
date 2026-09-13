@@ -1,12 +1,10 @@
+#!/usr/bin/env bash
+
 # SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
 #
 # SPDX-License-Identifier: MIT
 
-# shellcheck shell=bash
-
-  # Build the synthetic netDb fixture helper so the pipeline (empty netDb)
-  # can still satisfy the strict /i2pseeds.su3 healthcheck. Reuses the
-  # reseed-tools go.mod (same common/crypto versions) — no extra deps.
+  # Synthetic netDb fixture helper: an empty netDb still passes the /i2pseeds.su3 healthcheck
   b19-log info "RESEED" "$(_ "Building reseed-fixture helper")"
 
   cat > "${B19_HOME}/fixture.go" <<'GOEOF'
