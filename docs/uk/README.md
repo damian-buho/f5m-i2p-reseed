@@ -8,7 +8,7 @@ pf-cli-managed: yes
 
 [English](../../README.md) · [Español](../es/README.md)
 
-# F5M/I2P Reseed
+# F5M / I2P Reseed
 
 Дистрибуція reseed-сервера I2P з підтримкою спільноти на основі B19/Go
 

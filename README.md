@@ -6,7 +6,7 @@ pf-cli-managed: yes
 
 [Español](docs/es/README.md) · [Українська](docs/uk/README.md)
 
-# F5M/I2P Reseed
+# F5M / I2P Reseed
 
 Community-maintained distribution of the I2P reseed server based on B19/Go
 

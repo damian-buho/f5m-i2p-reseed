@@ -8,7 +8,7 @@ pf-cli-managed: yes
 
 # Getting Support
 
-Thanks for using **F5M/I2P Reseed**!
+Thanks for using **F5M / I2P Reseed**!
 This document explains where to get help and how to ask effective questions.
 
 ## Before You Ask
@@ -30,7 +30,7 @@ To help us help you, please include:
 1. **What you’re trying to do** — the goal, not just the error.
 2. **What you tried** — code, commands, config.
 3. **What happened** vs. what you expected.
-4. **Environment** — OS, version of F5M/I2P Reseed, runtime version.
+4. **Environment** — OS, version of F5M / I2P Reseed, runtime version.
 5. **A minimal reproducible example**, if possible.
 
 ## Response Times
@@ -39,6 +39,6 @@ This is a community-maintained project. Maintainers respond when they can — ty
 
 ## Paid Support
 
-Paid support for F5M/I2P Reseed is available:
+Paid support for F5M / I2P Reseed is available:
 
 - [Support from author](https://dbuho.me)

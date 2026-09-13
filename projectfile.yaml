@@ -10,7 +10,7 @@ identity:
     en: Community-maintained distribution of the I2P reseed server based on B19/Go
     es: Distribución del servidor de reseed de I2P mantenida por la comunidad, basada en B19/Go
     uk: Дистрибуція reseed-сервера I2P з підтримкою спільноти на основі B19/Go
-  title: F5M/I2P Reseed
+  title: F5M / I2P Reseed
   description:
     en: Community-maintained distribution of go-i2p reseed-tools built on B19/Go. This repository holds only the packaging — Dockerfile, build scripts, and configuration, all MIT-licensed; the upstream reseed-tools are fetched at build time and retain their own licensing.
     es: Distribución de reseed-tools de go-i2p mantenida por la comunidad, construida sobre B19/Go. Este repositorio contiene únicamente el empaquetado — Dockerfile, scripts de compilación y configuración, todo con licencia MIT; las herramientas reseed-tools originales se obtienen en tiempo de compilación y conservan su propia licencia.

@@ -9,7 +9,7 @@
 cff-version: 1.2.0
 message: Please cite this software using the metadata from this file.
 type: software
-title: F5M/I2P Reseed
+title: F5M / I2P Reseed
 abstract: Community-maintained distribution of the I2P reseed server based on B19/Go
 authors:
   - family-names: Búho
@@ -32,3 +32,4 @@ keywords:
   - docker
 license: MIT
 repository-code: https://kiota.ch/f5m/i2p-reseed
+version: 1.1.3
