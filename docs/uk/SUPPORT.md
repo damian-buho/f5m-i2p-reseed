@@ -12,13 +12,6 @@ pf-cli-managed: yes
 Дякуємо, що користуєтеся **F5M / I2P Reseed**!
 Цей документ пояснює, де шукати допомогу та як ставити зрозумілі запитання.
 
-## Перш ніж питати
-
-Перегляньте це спершу — можливо, відповідь уже є:
-
-- [Issues на Codeberg](https://codeberg.org/f5m/i2p-reseed/issues)
-- [Issues на GitHub](https://github.com/damian-buho/f5m-i2p-reseed/issues)
-
 ## Куди звертатися
 
 - **Повідомити про вразливість безпеки** — [SECURITY.md](SECURITY.md)
