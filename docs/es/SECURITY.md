@@ -72,6 +72,9 @@ aplica a este proyecto):
 
 | ID | Motivo |
 | --- | --- |
+| CVE-2025-47913 | blocked by upstream |
+| GHSA-56w8-48fp-6mgv | blocked by upstream |
+| GO-2025-4116 | blocked by upstream |
 | CVE-2026-39827 | blocked by upstream |
 | GHSA-45gg-vh54-h5m9 | blocked by upstream |
 | GHSA-89gr-r52h-f8rx | blocked by upstream |
@@ -113,7 +116,6 @@ aplica a este proyecto):
 | GO-2026-4918 | blocked by upstream |
 | CVE-2026-39821 | blocked by upstream |
 | GO-2026-5026 | blocked by upstream |
-| CVE-2026-39822 | blocked by upstream |
 | CVE-2026-42502 | blocked by upstream |
 | CVE-2026-56852 | blocked by upstream |
 | GO-2026-5970 | blocked by upstream |
