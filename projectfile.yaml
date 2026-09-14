@@ -34,50 +34,6 @@ keywords:
   - censorship
   - docker
 kind: SoftwareSourceCode
-links:
-  - label:
-      en: F5M/I2P Reseed on Codeberg
-      es: F5M/I2P Reseed en Codeberg
-      uk: F5M/I2P Reseed на Codeberg
-    tags:
-      - public
-      - badges
-      - badges-gitea
-    type: source-code
-    url: https://codeberg.org/f5m/i2p-reseed
-  - label:
-      en: F5M/I2P Reseed on GitHub
-      es: F5M/I2P Reseed en GitHub
-      uk: F5M/I2P Reseed на GitHub
-    tags:
-      - public
-      - badges
-      - badges-github
-    type: source-code
-    url: https://github.com/damian-buho/f5m-i2p-reseed
-  - label:
-      en: F5M/I2P Reseed on kiota.ch
-      es: F5M/I2P Reseed en kiota.ch
-      uk: F5M/I2P Reseed на kiota.ch
-    preferred: true
-    type: source-code
-    url: https://kiota.ch/f5m/i2p-reseed
-  - label:
-      en: Issues on Codeberg
-      es: Incidencias en Codeberg
-      uk: Issues на Codeberg
-    tags:
-      - support
-    type: bugs
-    url: https://codeberg.org/f5m/i2p-reseed/issues
-  - label:
-      en: Issues on GitHub
-      es: Incidencias en GitHub
-      uk: Issues на GitHub
-    tags:
-      - support
-    type: bugs
-    url: https://github.com/damian-buho/f5m-i2p-reseed/issues
 org:
   projectfile:
     conventions:
@@ -85,17 +41,18 @@ org:
         parents:
           - url: ssh://git@kiota.ch/b19/ubuntu.git
     status: maintained
+technologies:
+  - go
 repositories:
-  - issues: true
-    role: mirror
-    type: git
-    url: ssh://git@codeberg.org/f5m/i2p-reseed.git
-  - role: mirror
-    type: git
-    url: git@github.com:damian-buho/f5m-i2p-reseed.git
   - branch: main
     role: origin
     type: git
     url: ssh://git@kiota.ch/f5m/i2p-reseed.git
-technologies:
-  - go
+links:
+  - label:
+      en: F5M / I2P Reseed on kiota.ch
+      es: F5M / I2P Reseed en kiota.ch
+      uk: F5M / I2P Reseed на kiota.ch
+    preferred: true
+    type: source-code
+    url: https://kiota.ch/f5m/i2p-reseed
