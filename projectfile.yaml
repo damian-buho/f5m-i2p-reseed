@@ -34,20 +34,6 @@ keywords:
   - censorship
   - docker
 kind: SoftwareSourceCode
-org:
-  projectfile:
-    conventions:
-      fragments:
-        parents:
-          - url: ssh://git@kiota.ch/b19/ubuntu.git
-    status: maintained
-technologies:
-  - go
-repositories:
-  - branch: main
-    role: origin
-    type: git
-    url: ssh://git@kiota.ch/f5m/i2p-reseed.git
 links:
   - label:
       en: F5M / I2P Reseed on kiota.ch
@@ -56,3 +42,17 @@ links:
     preferred: true
     type: source-code
     url: https://kiota.ch/f5m/i2p-reseed
+org:
+  projectfile:
+    conventions:
+      fragments:
+        parents:
+          - url: ssh://git@kiota.ch/b19/ubuntu.git
+    status: maintained
+repositories:
+  - branch: main
+    role: origin
+    type: git
+    url: ssh://git@kiota.ch/f5m/i2p-reseed.git
+technologies:
+  - go
