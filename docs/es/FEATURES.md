@@ -37,7 +37,7 @@ SPDX-License-Identifier: MIT
 - Un contenedor concurrente que comparta el volumen no puede corromper una clave escrita a medias.
 - El certificado de firma queda listo para presentarlo al registrar el servidor ante el equipo de I2P.
 
-## Heredado de B19/Ubuntu
+## Heredado de B19 / Ubuntu
 
 ### Caché APT persistente entre compilaciones
 
