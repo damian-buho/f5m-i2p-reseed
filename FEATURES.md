@@ -35,7 +35,7 @@ SPDX-License-Identifier: MIT
 - A concurrent container sharing the volume cannot corrupt a half-written key.
 - The signing certificate is ready to submit when registering the server with the I2P team.
 
-## Inherited from B19/Ubuntu
+## Inherited from B19 / Ubuntu
 
 ### Persistent APT cache across builds
 
