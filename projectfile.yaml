@@ -25,10 +25,10 @@ includes:
   - .makefile/library/vulnerabilities/go/golang.org-x-net.yaml
   - .makefile/library/vulnerabilities/go/golang.org-x-text.yaml
   - .projectfile/vulnerabilities.yaml
-  - https://kiota.ch/damian-buho/metadata/raw/branch/main/registry/dockerhub.yaml
-  - https://kiota.ch/damian-buho/metadata/raw/branch/main/registry/ghcr.yaml
   - https://kiota.ch/damian-buho/metadata/raw/branch/main/forge/github.yaml
   - https://kiota.ch/damian-buho/metadata/raw/branch/main/include.yaml
+  - https://kiota.ch/damian-buho/metadata/raw/branch/main/registry/dockerhub.yaml
+  - https://kiota.ch/damian-buho/metadata/raw/branch/main/registry/ghcr.yaml
   - https://kiota.ch/f5m/metadata/raw/branch/main/include.yaml
 keywords:
   - i2p
@@ -43,6 +43,7 @@ links:
       en: F5M / I2P Reseed on GitHub
       es: F5M / I2P Reseed en GitHub
       uk: F5M / I2P Reseed на GitHub
+    priority: 80
     tags:
       - public
       - badges
@@ -53,6 +54,7 @@ links:
       en: Issues on GitHub
       es: Incidencias en GitHub
       uk: Задачі на GitHub
+    priority: 80
     tags:
       - support
     type: bugs
@@ -62,17 +64,16 @@ links:
       es: F5M / I2P Reseed en kiota.ch
       uk: F5M / I2P Reseed на kiota.ch
     preferred: true
+    priority: 10
     type: source-code
     url: https://kiota.ch/f5m/i2p-reseed
-  - derived: true
-    label:
+  - label:
       en: Packages on GHCR
       es: Paquetes en GHCR
       uk: Пакунки на GHCR
     type: package-registry
     url: https://github.com/damian-buho/f5m-i2p-reseed/pkgs/container/f5m%2Fi2p-reseed
-  - derived: true
-    label:
+  - label:
       en: Packages on Docker Hub
       es: Paquetes en Docker Hub
       uk: Пакунки на Docker Hub
