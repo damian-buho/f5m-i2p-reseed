@@ -21,6 +21,7 @@ includes:
   - .makefile/b19/images/go.yaml
   - .makefile/b19/images/ubuntu.yaml
   - .makefile/b19/traits/release.yaml
+  - .makefile/container/traits/readme-service.yaml
   - .makefile/library/vulnerabilities/go/golang.org-x-crypto.yaml
   - .makefile/library/vulnerabilities/go/golang.org-x-net.yaml
   - .makefile/library/vulnerabilities/go/golang.org-x-text.yaml
@@ -80,6 +81,18 @@ links:
     url: https://hub.docker.com/r/damianbuho/f5m-i2p-reseed
 org:
   projectfile:
+    artifacts:
+      i2p-reseed:
+        kind: service
+        summary:
+          en: I2P reseed server
+          es: Servidor de resiembra I2P
+          uk: Сервер початкового заповнення I2P
+        ports:
+          - port: 8080
+            name: http
+            path: /i2pseeds.su3
+            protocol: tcp
     conventions:
       fragments:
         parents:

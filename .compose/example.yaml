@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+
+---
+services:
+  i2p-reseed:
+    image: docker.io/damianbuho/f5m-i2p-reseed:latest
+    ports:
+      - "8080:8080"
+    environment:
+      F5M_I2P_RESEED_SIGNER: change-me@mail.i2p
+    volumes:
+      - i2p:/app/.i2p
+      - i2p-reseed:/app/data
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+  i2p:
+    image: docker.io/damianbuho/f5m-i2p:latest
+    volumes:
+      - i2p:/app/.i2p
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+volumes:
+  i2p:
+  i2p-reseed:
