@@ -167,7 +167,7 @@ jobs:
       B19_FETCH_LOCAL_CACHE: ${{ inputs.B19_FETCH_LOCAL_CACHE || vars.B19_FETCH_LOCAL_CACHE || 'Y' }}
       B19_GO_BASE_IMAGE: ${{ vars.B19_GO_BASE_IMAGE || format('{0}/b19/go:{1}', vars.SOURCE_DOCKER_REGISTRY || 'kiota.ch', vars.BASE_IMAGE_DEFAULT_VERSION || 'latest') }}
       B19_OFFGRID_MODE: ${{ inputs.B19_OFFGRID_MODE || vars.B19_OFFGRID_MODE || 'N' }}
-      B19_UBUNTU_BASE_IMAGE: ${{ vars.B19_UBUNTU_BASE_IMAGE || format('{0}/b19/ubuntu/{1}:{2}', vars.SOURCE_DOCKER_REGISTRY || 'kiota.ch', vars.B19_UBUNTU_SERIES || 'resolute', vars.BASE_IMAGE_DEFAULT_VERSION || 'latest') }}
+      B19_UBUNTU_BASE_IMAGE: ${{ vars.B19_UBUNTU_BASE_IMAGE || format('{0}/b19/ubuntu:{1}{2}', vars.SOURCE_DOCKER_REGISTRY || 'kiota.ch', vars.M6E_BASE_IMAGE_VARIANT_PREFIX, vars.B19_UBUNTU_SERIES || 'resolute') }}
       B19_UBUNTU_SERIES: ${{ inputs.B19_UBUNTU_SERIES || vars.B19_UBUNTU_SERIES || 'resolute' }}
       B19_VERBOSITY: ${{ inputs.B19_VERBOSITY || vars.B19_VERBOSITY || 'info' }}
       DESTINATION_DOCKER_REGISTRY: ${{ inputs.DESTINATION_DOCKER_REGISTRY || vars.DESTINATION_DOCKER_REGISTRY }}
@@ -195,7 +195,7 @@ jobs:
             B19_FETCH_LOCAL_CACHE=${{ inputs.B19_FETCH_LOCAL_CACHE || vars.B19_FETCH_LOCAL_CACHE || 'Y' }}
             B19_GO_BASE_IMAGE=${{ vars.B19_GO_BASE_IMAGE || format('{0}/b19/go:{1}', vars.SOURCE_DOCKER_REGISTRY || 'kiota.ch', env.M6E_TAG) }}
             B19_OFFGRID_MODE=${{ inputs.B19_OFFGRID_MODE || vars.B19_OFFGRID_MODE || 'N' }}
-            B19_UBUNTU_BASE_IMAGE=${{ vars.B19_UBUNTU_BASE_IMAGE || format('{0}/b19/ubuntu/{1}:{2}', vars.SOURCE_DOCKER_REGISTRY || 'kiota.ch', vars.B19_UBUNTU_SERIES || 'resolute', env.M6E_TAG) }}
+            B19_UBUNTU_BASE_IMAGE=${{ vars.B19_UBUNTU_BASE_IMAGE || format('{0}/b19/ubuntu:{1}{2}', vars.SOURCE_DOCKER_REGISTRY || 'kiota.ch', vars.M6E_BASE_IMAGE_VARIANT_PREFIX, vars.B19_UBUNTU_SERIES || 'resolute') }}
             B19_UBUNTU_SERIES=${{ inputs.B19_UBUNTU_SERIES || vars.B19_UBUNTU_SERIES || 'resolute' }}
             B19_VERBOSITY=${{ inputs.B19_VERBOSITY || vars.B19_VERBOSITY || 'info' }}
             DESTINATION_DOCKER_REGISTRY=${{ inputs.DESTINATION_DOCKER_REGISTRY || vars.DESTINATION_DOCKER_REGISTRY }}
@@ -236,6 +236,7 @@ jobs:
     needs: ["image-is-built"]
     env:
       M6E_IMAGE_ARCHIVE: image-${{ github.run_id }}.tar
+      CI_IGNORE_VULNERABILITIES: ${{ vars.CI_IGNORE_VULNERABILITIES }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -254,6 +255,7 @@ jobs:
           run: auto-grype image
           env: |-
             M6E_IMAGE_ARCHIVE=image-${{ github.run_id }}.tar
+            CI_IGNORE_VULNERABILITIES=${{ vars.CI_IGNORE_VULNERABILITIES }}
             M6E_SHARED_CACHE=Y
           mounts: /app/data/ci-cache/grype-db:/app/.cache/grype:rw
       - name: trivy-scan-tar
@@ -265,6 +267,7 @@ jobs:
           run: auto-trivy image
           env: |-
             M6E_IMAGE_ARCHIVE=image-${{ github.run_id }}.tar
+            CI_IGNORE_VULNERABILITIES=${{ vars.CI_IGNORE_VULNERABILITIES }}
             M6E_SHARED_CACHE=Y
             TRIVY_CACHE_BACKEND
           mounts: /app/data/ci-cache/trivy-db:/app/.cache/trivy:rw
@@ -349,6 +352,12 @@ jobs:
           # one `latest-<branch>` tag on the primary sink, so a branch build is testable
           # without a tag and without moving anything a consumer floats on.
           preview: ${{ github.ref_type == 'branch' && github.ref_name || '' }}
+          # Head templates per build kind, as org.projectfile.image.heads declares them
+          heads: |
+            release ${version} ${major}.${minor} ${major} latest
+            prerelease ${version}
+            trunk edge
+            branch latest-${branch}
           # OUTPUT_REGISTRY: the forge-dependent PUSH target (kiota.ch / ghcr.io / …),
           # always threaded — empty => Docker Hub. NOT the per-namespace INPUT registries
           # (B19_DOCKER_REGISTRY & friends answer "where base images come FROM"); this
@@ -407,6 +416,8 @@ jobs:
       - run: echo source-is-ok
   source-is-secure:
     runs-on: docker
+    env:
+      CI_IGNORE_VULNERABILITIES: ${{ vars.CI_IGNORE_VULNERABILITIES }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -420,6 +431,7 @@ jobs:
           version: ${{ env.M6E_TAG }}
           run: auto-grype
           env: |-
+            CI_IGNORE_VULNERABILITIES=${{ vars.CI_IGNORE_VULNERABILITIES }}
             M6E_SHARED_CACHE=Y
           mounts: /app/data/ci-cache/grype-db:/app/.cache/grype:rw
       - name: trivy-scan-source
@@ -430,6 +442,7 @@ jobs:
           version: ${{ env.M6E_TAG }}
           run: auto-trivy fs
           env: |-
+            CI_IGNORE_VULNERABILITIES=${{ vars.CI_IGNORE_VULNERABILITIES }}
             M6E_SHARED_CACHE=Y
             TRIVY_CACHE_BACKEND
           mounts: /app/data/ci-cache/trivy-db:/app/.cache/trivy:rw
