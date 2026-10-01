@@ -12,7 +12,7 @@ I2P reseed server ([go-i2p/reseed-tools](https://github.com/go-i2p/reseed-tools)
 
 ## Key facts
 
-- Builder: `b19/go` → Final Base: `b19/ubuntu/resolute`
+- Builder: `b19/go` → Final Base: `b19/ubuntu:resolute`
 - Arch: amd64 only
 - Pinned version: `.container/compile-go/deps/reseed-tools/version.deps` (hash-verified via `b19-fetch`)
 - `CGO_ENABLED=0` static build
