@@ -14,7 +14,7 @@ Community-maintained distribution of go-i2p reseed-tools built on B19/Go. This r
 
 ![Project status](https://badges.kiota.ch/static/v1?label=status&message=maintained&color=1d63ed&style=flat-square) [![Last commit on GitHub](https://badges.kiota.ch/github/last-commit/damian-buho/f5m-i2p-reseed?label=last%20commit%20on%20GitHub&style=flat-square)](https://github.com/damian-buho/f5m-i2p-reseed) [![Last commit on kiota.ch](https://badges.kiota.ch/gitea/last-commit/f5m/i2p-reseed?gitea_url=https://kiota.ch&label=last%20commit%20on%20kiota.ch&style=flat-square)](https://kiota.ch/f5m/i2p-reseed)
 
-[![Publish pipeline on GitHub](https://github.com/damian-buho/f5m-i2p-reseed/actions/workflows/published.yaml/badge.svg?style=flat-square)](https://github.com/damian-buho/f5m-i2p-reseed/actions) [![Vulnerability audit on GitHub](https://github.com/damian-buho/f5m-i2p-reseed/actions/workflows/audited.yaml/badge.svg?style=flat-square)](https://github.com/damian-buho/f5m-i2p-reseed/actions) [![Dependency freshness on GitHub](https://github.com/damian-buho/f5m-i2p-reseed/actions/workflows/check-outdated.yaml/badge.svg?style=flat-square)](https://github.com/damian-buho/f5m-i2p-reseed/actions) [![Analysis sweep on GitHub](https://github.com/damian-buho/f5m-i2p-reseed/actions/workflows/analyze.yaml/badge.svg?style=flat-square)](https://github.com/damian-buho/f5m-i2p-reseed/actions)
+[![Publish pipeline on GitHub](https://github.com/damian-buho/f5m-i2p-reseed/actions/workflows/published.yaml/badge.svg?style=flat-square)](https://github.com/damian-buho/f5m-i2p-reseed/actions) [![Vulnerability audit on GitHub](https://github.com/damian-buho/f5m-i2p-reseed/actions/workflows/audited.yaml/badge.svg?style=flat-square)](https://github.com/damian-buho/f5m-i2p-reseed/actions) [![Dependency freshness on GitHub](https://github.com/damian-buho/f5m-i2p-reseed/actions/workflows/check-outdated.yaml/badge.svg?style=flat-square)](https://github.com/damian-buho/f5m-i2p-reseed/actions) [![Analysis sweep on GitHub](https://github.com/damian-buho/f5m-i2p-reseed/actions/workflows/analyzed.yaml/badge.svg?style=flat-square)](https://github.com/damian-buho/f5m-i2p-reseed/actions)
 
 [![Publish pipeline on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/published.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Vulnerability audit on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/audited.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Dependency freshness on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/check-outdated.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Analysis sweep on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/analyze.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions)
 
@@ -136,7 +136,7 @@ For the local dev loop, `make dev-container` brings up the dev-container.
 
 Pipeline entry points:
 
-- `make analyze` — Run the heavy analysis sweep (mutation testing, benchmarks)
+- `make analyzed` — Run the heavy analysis sweep (mutation testing, benchmarks)
 - `make audited` — Re-scan the pinned dependencies and published artifacts for new vulnerabilities
 - `make check-outdated` — Report every pinned dependency that lags upstream
 - `make ready-to-publish` — Run the pseudo-CI pipeline locally — build, test and scan, without publishing
