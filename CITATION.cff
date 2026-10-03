@@ -32,5 +32,5 @@ keywords:
   - docker
 license: MIT
 repository-code: https://kiota.ch/f5m/i2p-reseed
-version: 0.5.1
-date-released: "2026-10-02"
+version: 0.5.2
+date-released: "2026-10-03"
