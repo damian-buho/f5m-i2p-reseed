@@ -105,8 +105,8 @@ set -o pipefail
   # The ZIP body sits after header (40 B) + version (16 B min) + signerID (variable
   # but < 256 B). Scan the first 256 bytes for the ZIP local-file-header magic
   # to confirm the embedded payload is a real routerInfo archive, not garbage.
-  if ! od --address-radix=n --format=x1 --read-bytes=256 "${TMP}" 2>/dev/null \
-       | tr -d ' \n' | grep -q "504b0304"; then
+  SU3_ZIP_MAGIC="$(od --address-radix=n --format=x1 --read-bytes=256 "${TMP}" 2>/dev/null | tr -d ' \n')" || SU3_ZIP_MAGIC=""
+  if ! grep -q "504b0304" <<<"${SU3_ZIP_MAGIC}"; then
     cache_and_exit 1 "$(_p "Reseed server unhealthy: SU3 body is not a ZIP (size %s)" "${SIZE}")"
   fi
 
