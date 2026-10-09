@@ -13,3 +13,5 @@ org:
       suppress:
         - id: CVE-2026-40611
           reason: unfixable upstream dependency; fixable only via upstream release
+        - id: GHSA-qqx8-2xmm-jrv8
+          reason: unfixable upstream dependency; fixable only via upstream release
