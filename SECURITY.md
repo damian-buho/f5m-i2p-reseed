@@ -109,6 +109,8 @@ depends on an upstream release, or the advisory does not apply to this project):
 | GO-2026-5013 | blocked by upstream |
 | CVE-2026-56854 | blocked by upstream |
 | GO-2026-6303 | blocked by upstream |
+| GO-2026-6355 | blocked by upstream |
+| GO-2026-6354 | blocked by upstream |
 | CVE-2026-46600 | blocked by upstream |
 | GO-2026-5942 | blocked by upstream |
 | CVE-2026-25681 | blocked by upstream |
@@ -123,5 +125,6 @@ depends on an upstream release, or the advisory does not apply to this project):
 | GO-2026-5027 | blocked by upstream |
 | CVE-2026-56852 | blocked by upstream |
 | GO-2026-5970 | blocked by upstream |
+| GO-2026-6629 | blocked by upstream |
 | CVE-2026-40611 | unfixable upstream dependency; fixable only via upstream release |
 | GHSA-qqx8-2xmm-jrv8 | unfixable upstream dependency; fixable only via upstream release |
