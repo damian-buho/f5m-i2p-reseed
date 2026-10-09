@@ -96,12 +96,15 @@ aplica a este proyecto):
 | CVE-2026-39832 | blocked by upstream |
 | GO-2026-5006 | blocked by upstream |
 | CVE-2026-39833 | blocked by upstream |
+| GHSA-jppx-rxg9-jmrx | blocked by upstream |
 | GO-2026-5005 | blocked by upstream |
 | CVE-2026-39834 | blocked by upstream |
 | GO-2026-5020 | blocked by upstream |
 | CVE-2026-39835 | blocked by upstream |
+| GHSA-78mq-xcr3-xm33 | blocked by upstream |
 | GO-2026-5015 | blocked by upstream |
 | CVE-2026-42508 | blocked by upstream |
+| GHSA-5cgq-3rg8-m6cv | blocked by upstream |
 | GO-2026-5021 | blocked by upstream |
 | CVE-2026-46595 | blocked by upstream |
 | GO-2026-5023 | blocked by upstream |
@@ -110,15 +113,20 @@ aplica a este proyecto):
 | CVE-2026-56854 | blocked by upstream |
 | GO-2026-6303 | blocked by upstream |
 | CVE-2026-46600 | blocked by upstream |
+| GO-2026-5942 | blocked by upstream |
 | CVE-2026-25681 | blocked by upstream |
+| GO-2026-5029 | blocked by upstream |
 | CVE-2026-27136 | blocked by upstream |
+| GO-2026-5030 | blocked by upstream |
 | CVE-2026-33814 | blocked by upstream |
 | GO-2026-4918 | blocked by upstream |
 | CVE-2026-39821 | blocked by upstream |
 | GO-2026-5026 | blocked by upstream |
 | CVE-2026-42502 | blocked by upstream |
+| GO-2026-5027 | blocked by upstream |
 | CVE-2026-56852 | blocked by upstream |
 | GO-2026-5970 | blocked by upstream |
 | CVE-2026-40611 | unfixable upstream dependency; fixable only via upstream release |
+| GHSA-qqx8-2xmm-jrv8 | unfixable upstream dependency; fixable only via upstream release |
 
 <!-- textlint-enable -->
