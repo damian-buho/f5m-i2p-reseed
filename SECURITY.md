@@ -125,6 +125,14 @@ depends on an upstream release, or the advisory does not apply to this project):
 | GO-2026-5026 | blocked by upstream |
 | CVE-2026-42502 | blocked by upstream |
 | GO-2026-5027 | blocked by upstream |
+| CVE-2026-78659 | blocked by upstream |
+| GO-2026-6603 | blocked by upstream |
+| CVE-2026-78663 | blocked by upstream |
+| GO-2026-6612 | blocked by upstream |
+| CVE-2026-78669 | blocked by upstream |
+| GO-2026-6611 | blocked by upstream |
+| CVE-2026-97032 | blocked by upstream |
+| GO-2026-6617 | blocked by upstream |
 | CVE-2026-56852 | blocked by upstream |
 | GO-2026-5970 | blocked by upstream |
 | CVE-2026-56851 | blocked by upstream |
