@@ -31,7 +31,7 @@ services:
       # Both mount the SAME path (/app/.i2p) — that is the router's default
       # config dir, so no path translation is needed on either side.
       - i2p-shared-config:/app/.i2p
-      # Persists the SU3 signing key (${XDG_DATA_HOME}/keys) across restarts
+      # Persists the SU3 signing key (${XDG_DATA_HOME:-/app/data}/keys) across restarts
       - i2p-reseed-data:/app/data
       - /etc/localtime:/etc/localtime:ro
     tmpfs:
