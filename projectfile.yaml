@@ -12,9 +12,9 @@ identity:
     uk: Дистрибуція reseed-сервера I2P з підтримкою спільноти на основі B19/Go
   title: F5M / I2P Reseed
   description:
-    en: Community-maintained distribution of go-i2p reseed-tools built on B19/Go. This repository holds only the packaging — Dockerfile, build scripts, and configuration, all MIT-licensed; the upstream reseed-tools are fetched at build time and retain their own licensing.
-    es: Distribución de reseed-tools de go-i2p mantenida por la comunidad, construida sobre B19/Go. Este repositorio contiene únicamente el empaquetado — Dockerfile, scripts de compilación y configuración, todo con licencia MIT; las herramientas reseed-tools originales se obtienen en tiempo de compilación y conservan su propia licencia.
-    uk: Дистрибуція reseed-tools від go-i2p з підтримкою спільноти, зібрана на основі B19/Go. Цей репозиторій містить лише пакування — Dockerfile, скрипти збирання та конфігурацію, усе під ліцензією MIT; оригінальні інструменти reseed-tools отримують під час збирання, і вони зберігають власну ліцензію.
+    en: I2P reseed server distributing signed SU3 bootstrap bundles, with first-boot keys, gated endpoints and a liveness probe.
+    es: Servidor reseed de I2P que distribuye bundles SU3 firmados, con claves al primer arranque, endpoints limitados y sonda de vida.
+    uk: Reseed-сервер I2P, що роздає підписані SU3-бандли, з ключами при першому старті, лімітованими ендпоїнтами та пробою живучості.
   version: 0.6.2
   released: "2026-10-10"
 includes:
@@ -35,12 +35,13 @@ includes:
   - https://kiota.ch/damian-buho/metadata/raw/branch/main/registry/dockerhub.yaml
   - https://kiota.ch/f5m/metadata/raw/branch/main/include.yaml
 keywords:
-  - i2p
-  - reseed
   - anonymity
-  - bootstrap
+  - bootstrap-node
   - censorship
-  - docker
+  - censorship-circumvention
+  - i2p
+  - p2p
+  - self-hosted
 kind: SoftwareSourceCode
 links:
   - label:

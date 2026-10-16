@@ -24,12 +24,13 @@ contact:
     orcid: https://orcid.org/0009-0004-8579-7633
     website: https://dbuho.me
 keywords:
-  - i2p
-  - reseed
   - anonymity
-  - bootstrap
+  - bootstrap-node
   - censorship
-  - docker
+  - censorship-circumvention
+  - i2p
+  - p2p
+  - self-hosted
 license: MIT
 repository-code: https://kiota.ch/f5m/i2p-reseed
 version: 0.6.2

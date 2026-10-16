@@ -8,7 +8,7 @@ pf-cli-managed: yes
 
 # F5M / I2P Reseed
 
-Community-maintained distribution of go-i2p reseed-tools built on B19/Go. This repository holds only the packaging — Dockerfile, build scripts, and configuration, all MIT-licensed; the upstream reseed-tools are fetched at build time and retain their own licensing.
+I2P reseed server distributing signed SU3 bootstrap bundles, with first-boot keys, gated endpoints and a liveness probe.
 
 [![Stand with Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://damian-buho.github.io/support-ukraine/) [![Projectfile inside](https://badges.kiota.ch/static/v1?label=projectfile&message=inside&labelColor=0d0d0d&color=8c6723&style=flat-square)](https://projectfile.org) [![License](https://badges.kiota.ch/static/v1?label=license&message=MIT&color=1e5913&style=flat-square)](LICENSE) [![Cosign](https://badges.kiota.ch/static/v1?label=cosign&message=enabled&color=1e5913&style=flat-square)](https://docs.sigstore.dev/cosign/verifying/verify/) ![ClamAV scanned](https://badges.kiota.ch/static/v1?label=clamav&message=scanned&color=1877aa&style=flat-square) [![PRs welcome](https://badges.kiota.ch/static/v1?label=PRs&message=welcome&color=1e5913&style=flat-square)](CONTRIBUTING.md) [![REUSE compliance](https://api.reuse.software/badge/github.com/damian-buho/f5m-i2p-reseed)](https://api.reuse.software/info/github.com/damian-buho/f5m-i2p-reseed)
 
