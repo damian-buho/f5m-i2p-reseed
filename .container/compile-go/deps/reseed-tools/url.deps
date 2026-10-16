@@ -2,4 +2,4 @@
 #
 # SPDX-License-Identifier: MIT
 
-https://github.com/go-i2p/reseed-tools/archive/refs/tags/v${M6E_UPSTREAM_VERSION}.tar.gz
+https://github.com/damian-buho/reseed-tools/archive/refs/tags/v${M6E_UPSTREAM_VERSION}.tar.gz

@@ -15,6 +15,7 @@ I2P reseed server ([go-i2p/reseed-tools](https://github.com/go-i2p/reseed-tools)
 - Builder: `b19/go` → Final Base: `b19/ubuntu:resolute`
 - Arch: amd64 only
 - Pinned version: `.container/compile-go/deps/reseed-tools/version.deps` (hash-verified via `b19-fetch`)
+- Source is our fork (`damian-buho/reseed-tools`), not upstream: it carries the unthrottled `/health` liveness endpoint blackbox probes need. Switch `url.deps` back to `go-i2p` once upstream merges the PR and releases past it.
 - `CGO_ENABLED=0` static build
 
 ## Keys (bootstrap.d)
@@ -25,7 +26,7 @@ I2P reseed server ([go-i2p/reseed-tools](https://github.com/go-i2p/reseed-tools)
 
 - `8080` — reseed HTTP (plain behind Traefik via `--trustProxy`; upstream default is 8443, we follow the fleet convention)
 
-Routes: `/` web homepage (rate-limited 40/h per IP), `/i2pseeds.su3` seed bundles (rate-limited 4/h per IP; requires the I2P router User-Agent `Wget/1.11.4` — anything else gets 403).
+Routes: `/` web homepage (rate-limited 40/h per IP), `/i2pseeds.su3` seed bundles (rate-limited 4/h per IP; requires the I2P router User-Agent `Wget/1.11.4` — anything else gets 403), `/health` liveness (unthrottled, `200 text/plain ok`, no UA check — the blackbox target).
 
 ## netDb source
 
