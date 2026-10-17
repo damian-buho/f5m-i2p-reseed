@@ -46,9 +46,9 @@ keywords:
 kind: SoftwareSourceCode
 links:
   - label:
-      en: F5M / I2P Reseed on GitHub
-      es: F5M / I2P Reseed en GitHub
-      uk: F5M / I2P Reseed на GitHub
+      en: Repository on GitHub
+      es: Repositorio en GitHub
+      uk: Репозиторій на GitHub
     priority: 80
     tags:
       - public
@@ -66,9 +66,9 @@ links:
     type: bugs
     url: https://github.com/damian-buho/f5m-i2p-reseed/issues
   - label:
-      en: F5M / I2P Reseed on kiota.ch
-      es: F5M / I2P Reseed en kiota.ch
-      uk: F5M / I2P Reseed на kiota.ch
+      en: Repository on kiota.ch
+      es: Repositorio en kiota.ch
+      uk: Репозиторій на kiota.ch
     preferred: true
     priority: 10
     type: source-code
