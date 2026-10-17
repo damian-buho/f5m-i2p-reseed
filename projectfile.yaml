@@ -17,6 +17,7 @@ identity:
     uk: Reseed-сервер I2P, що роздає підписані SU3-бандли, з ключами при першому старті, лімітованими ендпоїнтами та пробою живучості.
   version: 0.6.2
   released: "2026-10-10"
+  visibility: public
 includes:
   - .makefile/b19/ci.yaml
   - .makefile/b19/images/go.yaml
