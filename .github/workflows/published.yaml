@@ -58,28 +58,10 @@ env:
   M6E_RUN_SCOPE: ${{ github.run_id }}-${{ github.run_attempt }}
   PF_CLI_IMAGE: ${{ vars.PF_CLI_IMAGE || format('{0}/cli:{1}', vars.SOURCE_DOCKER_REGISTRY || 'ghcr.io/projectfile-org', vars.BASE_IMAGE_DEFAULT_VERSION || 'latest') }}
 jobs:
-  artifacts-are-ok:
-    runs-on: ubuntu-26.04
-    needs: ["image-is-ready", "inputs-are-ok"]
-    if: ${{ !cancelled() && needs.image-is-ready.result == 'success' && needs.inputs-are-ok.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
-    steps:
-      - run: echo artifacts-are-ok
-  container-is-diagnosed:
-    runs-on: ubuntu-26.04
-    needs: ["container-ready-to-test"]
-    if: ${{ !cancelled() && needs.container-ready-to-test.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
-    steps:
-      - run: echo container-is-diagnosed
-  container-is-ok:
-    runs-on: ubuntu-26.04
-    needs: ["images-are-ok"]
-    if: ${{ !cancelled() && needs.images-are-ok.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
-    steps:
-      - run: echo container-is-ok
   container-is-verified:
     runs-on: ubuntu-26.04
-    needs: ["container-is-diagnosed"]
-    if: ${{ !cancelled() && needs.container-is-diagnosed.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
+    needs: ["image-is-built"]
+    if: ${{ !cancelled() && needs.image-is-built.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
     env:
       M6E_IMAGE_FULLNAME: f5m/i2p-reseed:${{ vars.BASE_IMAGE_DEFAULT_VERSION || 'latest' }}-${{ github.run_id }}
       M6E_COMPOSE_PROJECT_NAME: ci-f5m-i2p-reseed-${{ github.run_id }}-${{ github.run_attempt }}
@@ -136,18 +118,6 @@ jobs:
         with:
           image: f5m/i2p-reseed:${{ env.M6E_TAG }}-${{ github.run_id }}
           network: ci-f5m-i2p-reseed-${{ env.M6E_RUN_SCOPE }}-network
-  container-ready-to-test:
-    runs-on: ubuntu-26.04
-    needs: ["container-is-ok"]
-    if: ${{ !cancelled() && needs.container-is-ok.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
-    steps:
-      - run: echo container-ready-to-test
-  documentation-is-ok:
-    runs-on: ubuntu-26.04
-    needs: ["documentation-passes-lint"]
-    if: ${{ !cancelled() && needs.documentation-passes-lint.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
-    steps:
-      - run: echo documentation-is-ok
   documentation-passes-lint:
     runs-on: ubuntu-26.04
     if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)
@@ -170,11 +140,6 @@ jobs:
           image: ${{ vars.D9T_JS_TOOLS_IMAGE || format('{0}/d9t/js-tools', vars.SOURCE_DOCKER_REGISTRY || 'ghcr.io/damian-buho') }}
           version: ${{ env.M6E_TAG }}
           run: auto-textlint
-  fetched:
-    runs-on: ubuntu-26.04
-    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)
-    steps:
-      - run: echo fetched
   image-has-sbom:
     runs-on: ubuntu-26.04
     needs: ["image-is-built", "release-tag"]
@@ -299,11 +264,11 @@ jobs:
             COSIGN_PASSWORD=${{ secrets.COSIGN_PASSWORD }}
   image-is-built:
     runs-on: ubuntu-26.04
-    needs: ["fetched", "inputs-are-ok", "release-tag"]
+    needs: ["documentation-passes-lint", "projectfile-is-ok", "release-tag", "source-is-compliant", "source-is-secure", "source-passes-lint"]
     permissions:
       actions: write
       contents: read
-    if: ${{ !cancelled() && needs.fetched.result == 'success' && needs.inputs-are-ok.result == 'success' && needs.release-tag.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
+    if: ${{ !cancelled() && needs.documentation-passes-lint.result == 'success' && needs.projectfile-is-ok.result == 'success' && needs.release-tag.result == 'success' && needs.source-is-compliant.result == 'success' && needs.source-is-secure.result == 'success' && needs.source-passes-lint.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
     concurrency:
       group: build-${{ github.repository }}-${{ toJSON(matrix) }}
       cancel-in-progress: false
@@ -387,12 +352,6 @@ jobs:
       - name: release-is-ready
         if: vars.CI_SKIP_IMAGE_IS_PUBLISHED != 'true' && vars.CI_SKIP_RELEASE_IS_READY != 'true'
         run: release-is-ready
-  image-is-ready:
-    runs-on: ubuntu-26.04
-    needs: ["container-is-verified", "image-is-secure"]
-    if: ${{ !cancelled() && needs.container-is-verified.result == 'success' && needs.image-is-secure.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
-    steps:
-      - run: echo image-is-ready
   image-is-secure:
     runs-on: ubuntu-26.04
     needs: ["image-is-built"]
@@ -509,30 +468,6 @@ jobs:
           path: reports/
           if-no-files-found: warn
           overwrite: true
-  image-is-seeded:
-    runs-on: ubuntu-26.04
-    needs: ["image-is-built", "release-tag"]
-    if: ${{ !cancelled() && needs.image-is-built.result == 'success' && needs.release-tag.result == 'success' && (needs.release-tag.outputs.tag != '') }}
-    steps:
-      - run: echo image-is-seeded
-  image-is-signed:
-    runs-on: ubuntu-26.04
-    needs: ["image-is-published", "release-tag"]
-    if: ${{ !cancelled() && needs.image-is-published.result == 'success' && needs.release-tag.result == 'success' && (needs.release-tag.outputs.tag != '') }}
-    steps:
-      - run: echo image-is-signed
-  images-are-ok:
-    runs-on: ubuntu-26.04
-    needs: ["image-is-built", "secrets-ready"]
-    if: ${{ !cancelled() && needs.image-is-built.result == 'success' && needs.secrets-ready.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
-    steps:
-      - run: echo images-are-ok
-  inputs-are-ok:
-    runs-on: ubuntu-26.04
-    needs: ["documentation-is-ok", "projectfile-is-ok", "source-is-ok"]
-    if: ${{ !cancelled() && needs.documentation-is-ok.result == 'success' && needs.projectfile-is-ok.result == 'success' && needs.source-is-ok.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
-    steps:
-      - run: echo inputs-are-ok
   projectfile-is-ok:
     runs-on: ubuntu-26.04
     needs: ["projectfile-is-valid"]
@@ -566,22 +501,50 @@ jobs:
           run: pf-cli validate
   published:
     runs-on: ubuntu-26.04
-    needs: ["image-has-sbom", "image-is-attested", "image-is-published", "image-is-seeded", "image-is-signed", "ready-to-publish", "release-is-published", "release-notes-are-published", "release-tag"]
-    if: ${{ !cancelled() && (needs.image-has-sbom.result == 'success' || (needs.image-has-sbom.result == 'skipped' && !(needs.release-tag.outputs.tag != ''))) && (needs.image-is-attested.result == 'success' || (needs.image-is-attested.result == 'skipped' && !(needs.release-tag.outputs.tag != ''))) && (needs.image-is-published.result == 'success' || (needs.image-is-published.result == 'skipped' && !((startsWith(github.ref, 'refs/heads/')) || (needs.release-tag.outputs.tag != '')))) && (needs.image-is-seeded.result == 'success' || (needs.image-is-seeded.result == 'skipped' && !(needs.release-tag.outputs.tag != ''))) && (needs.image-is-signed.result == 'success' || (needs.image-is-signed.result == 'skipped' && !(needs.release-tag.outputs.tag != ''))) && needs.ready-to-publish.result == 'success' && (needs.release-is-published.result == 'success' || (needs.release-is-published.result == 'skipped' && !(needs.release-tag.outputs.tag != ''))) && (needs.release-notes-are-published.result == 'success' || (needs.release-notes-are-published.result == 'skipped' && !(needs.release-tag.outputs.tag != ''))) && needs.release-tag.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
+    needs: ["container-is-verified", "documentation-passes-lint", "image-has-sbom", "image-is-attested", "image-is-built", "image-is-published", "image-is-secure", "projectfile-is-ok", "projectfile-is-valid", "release-is-published", "release-notes-are-published", "release-tag", "signing-is-ready", "source-is-compliant", "source-is-secure", "source-passes-lint"]
+    if: ${{ always() && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository) }}
     steps:
-      - run: echo published
-  ready-to-publish:
-    runs-on: ubuntu-26.04
-    needs: ["artifacts-are-ok"]
-    if: ${{ !cancelled() && needs.artifacts-are-ok.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
-    steps:
-      - run: echo ready-to-publish
+      - name: published verdict
+        run: |
+          passed=0 skipped=0 failed=0
+          for pair in \
+            "container-is-verified=${{ needs.container-is-verified.result }}" \
+            "documentation-passes-lint=${{ needs.documentation-passes-lint.result }}" \
+            "image-has-sbom=${{ needs.image-has-sbom.result }}" \
+            "image-is-attested=${{ needs.image-is-attested.result }}" \
+            "image-is-built=${{ needs.image-is-built.result }}" \
+            "image-is-published=${{ needs.image-is-published.result }}" \
+            "image-is-secure=${{ needs.image-is-secure.result }}" \
+            "projectfile-is-ok=${{ needs.projectfile-is-ok.result }}" \
+            "projectfile-is-valid=${{ needs.projectfile-is-valid.result }}" \
+            "release-is-published=${{ needs.release-is-published.result }}" \
+            "release-notes-are-published=${{ needs.release-notes-are-published.result }}" \
+            "release-tag=${{ needs.release-tag.result }}" \
+            "signing-is-ready=${{ needs.signing-is-ready.result }}" \
+            "source-is-compliant=${{ needs.source-is-compliant.result }}" \
+            "source-is-secure=${{ needs.source-is-secure.result }}" \
+            "source-passes-lint=${{ needs.source-passes-lint.result }}"; do
+            echo "verdict need=${pair%%=*} result=${pair#*=}"
+            case "${pair#*=}" in
+              success) passed=$((passed + 1)) ;;
+              skipped) skipped=$((skipped + 1)) ;;
+              *) failed=$((failed + 1)) ;;
+            esac
+          done
+          status=success; event=goal.succeeded
+          if [ "${failed}" -gt 0 ]; then
+            status=failure; event=goal.failed
+          elif [ "${passed}" -eq 0 ]; then
+            status=skipped; event=goal.skipped
+          fi
+          echo "verdict goal=published status=${status} passed=${passed} skipped=${skipped} failed=${failed}"
+          [ "${failed}" -eq 0 ]
   release-is-published:
     runs-on: ubuntu-26.04
-    needs: ["image-is-attested", "image-is-published", "image-is-seeded", "image-is-signed", "release-tag"]
+    needs: ["image-is-attested", "image-is-built", "image-is-published", "release-tag"]
     permissions:
       contents: write
-    if: ${{ !cancelled() && needs.image-is-attested.result == 'success' && needs.image-is-published.result == 'success' && needs.image-is-seeded.result == 'success' && needs.image-is-signed.result == 'success' && needs.release-tag.result == 'success' && (needs.release-tag.outputs.tag != '') }}
+    if: ${{ !cancelled() && needs.image-is-attested.result == 'success' && needs.image-is-built.result == 'success' && needs.image-is-published.result == 'success' && needs.release-tag.result == 'success' && (needs.release-tag.outputs.tag != '') }}
     env:
       M6E_RELEASE_TAG: ${{ needs.release-tag.outputs.tag }}
       RELEASE_TARGET: main
@@ -643,12 +606,6 @@ jobs:
         id: release-tag-detect
         if: vars.CI_SKIP_RELEASE_TAG != 'true' && vars.CI_SKIP_RELEASE_TAG_DETECT != 'true'
         run: .makefile/core/scripts/release-tag.sh
-  secrets-ready:
-    runs-on: ubuntu-26.04
-    needs: ["image-is-built"]
-    if: ${{ !cancelled() && needs.image-is-built.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
-    steps:
-      - run: echo secrets-ready
   signing-is-ready:
     runs-on: ubuntu-26.04
     needs: ["release-tag"]
@@ -695,12 +652,6 @@ jobs:
           image: ${{ vars.D9T_PYTHON_TOOLS_IMAGE || format('{0}/d9t/python-tools', vars.SOURCE_DOCKER_REGISTRY || 'ghcr.io/damian-buho') }}
           version: ${{ env.M6E_TAG }}
           run: reuse lint
-  source-is-ok:
-    runs-on: ubuntu-26.04
-    needs: ["source-is-compliant", "source-is-secure", "source-is-tested", "source-passes-lint"]
-    if: ${{ !cancelled() && needs.source-is-compliant.result == 'success' && needs.source-is-secure.result == 'success' && needs.source-is-tested.result == 'success' && needs.source-passes-lint.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
-    steps:
-      - run: echo source-is-ok
   source-is-secure:
     runs-on: ubuntu-26.04
     if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)
@@ -808,11 +759,6 @@ jobs:
           path: reports/
           if-no-files-found: warn
           overwrite: true
-  source-is-tested:
-    runs-on: ubuntu-26.04
-    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)
-    steps:
-      - run: echo source-is-tested
   source-passes-lint:
     runs-on: ubuntu-26.04
     if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)
