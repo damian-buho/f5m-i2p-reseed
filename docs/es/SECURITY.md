@@ -72,6 +72,8 @@ aplica a este proyecto):
 
 | ID | Motivo |
 | --- | --- |
+| CVE-2026-116587 | blocked by upstream |
+| GHSA-mgcc-cww5-fp2q | blocked by upstream |
 | CVE-2025-47913 | blocked by upstream |
 | GHSA-56w8-48fp-6mgv | blocked by upstream |
 | GO-2025-4116 | blocked by upstream |

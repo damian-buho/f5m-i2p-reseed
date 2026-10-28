@@ -27,6 +27,7 @@ includes:
   - .makefile/b19/traits/image/torrent.yaml
   - .makefile/container/traits/image/malware-scan.yaml
   - .makefile/container/traits/readme/service.yaml
+  - .makefile/library/vulnerabilities/go/github.com/go-jose/go-jose/v4.yaml
   - .makefile/library/vulnerabilities/go/golang.org/x/crypto.yaml
   - .makefile/library/vulnerabilities/go/golang.org/x/net.yaml
   - .makefile/library/vulnerabilities/go/golang.org/x/text.yaml
