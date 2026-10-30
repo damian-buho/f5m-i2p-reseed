@@ -10,7 +10,9 @@ pf-cli-managed: yes
 
 # F5M / I2P Reseed
 
-Reseed-сервер I2P, що роздає підписані SU3-бандли, з ключами при першому старті, лімітованими ендпоїнтами та пробою живучості.
+Reseed-сервер I2P на основі go-i2p/reseed-tools, що роздає підписані SU3-бандли, з ключами при першому старті, лімітованими ендпоїнтами та пробою живучості.
+
+Форк [reseed-tools](https://github.com/go-i2p/reseed-tools).
 
 [![Stand with Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://damian-buho.github.io/support-ukraine/) [![Projectfile inside](https://badges.kiota.ch/static/v1?label=projectfile&message=inside&labelColor=0d0d0d&color=8c6723&style=flat-square)](https://projectfile.org) [![License](https://badges.kiota.ch/static/v1?label=license&message=MIT&color=1e5913&style=flat-square)](LICENSE) [![Cosign](https://badges.kiota.ch/static/v1?label=cosign&message=enabled&color=1e5913&style=flat-square)](https://docs.sigstore.dev/cosign/verifying/verify/) ![ClamAV scanned](https://badges.kiota.ch/static/v1?label=clamav&message=scanned&color=1877aa&style=flat-square) [![PRs welcome](https://badges.kiota.ch/static/v1?label=PRs&message=welcome&color=1e5913&style=flat-square)](CONTRIBUTING.md) [![REUSE compliance](https://api.reuse.software/badge/github.com/damian-buho/f5m-i2p-reseed)](https://api.reuse.software/info/github.com/damian-buho/f5m-i2p-reseed)
 
@@ -163,6 +165,6 @@ make container-build
 
 ## Ліцензія
 
-Цей проєкт ліцензовано на умовах MIT — див. файл [LICENSE](LICENSE) для подробиць.
+Пакування в цьому репозиторії ліцензовано на умовах MIT — див. файл [LICENSE](LICENSE) для подробиць. reseed-tools поширюється за власною ліцензією, `MIT`.
 
 <!-- textlint-enable -->

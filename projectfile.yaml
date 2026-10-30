@@ -12,9 +12,9 @@ identity:
     uk: Дистрибуція reseed-сервера I2P з підтримкою спільноти на основі B19/Go
   title: F5M / I2P Reseed
   description:
-    en: I2P reseed server distributing signed SU3 bootstrap bundles, with first-boot keys, gated endpoints and a liveness probe.
-    es: Servidor reseed de I2P que distribuye bundles SU3 firmados, con claves al primer arranque, endpoints limitados y sonda de vida.
-    uk: Reseed-сервер I2P, що роздає підписані SU3-бандли, з ключами при першому старті, лімітованими ендпоїнтами та пробою живучості.
+    en: I2P reseed server based on go-i2p/reseed-tools, distributing signed SU3 bootstrap bundles, with first-boot keys, gated endpoints and a liveness probe.
+    es: Servidor reseed de I2P basado en go-i2p/reseed-tools, que distribuye bundles SU3 firmados, con claves al primer arranque, endpoints limitados y sonda de vida.
+    uk: Reseed-сервер I2P на основі go-i2p/reseed-tools, що роздає підписані SU3-бандли, з ключами при першому старті, лімітованими ендпоїнтами та пробою живучості.
   version: 0.7.3
   released: "2026-10-30"
   visibility: public
@@ -115,3 +115,8 @@ repositories:
     url: ssh://git@kiota.ch/f5m/i2p-reseed.git
 technologies:
   - go
+upstream:
+  - license: MIT
+    name: reseed-tools
+    relation: fork
+    url: https://github.com/go-i2p/reseed-tools
