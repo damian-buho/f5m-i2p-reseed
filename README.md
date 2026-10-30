@@ -10,8 +10,6 @@ pf-cli-managed: yes
 
 I2P reseed server based on go-i2p/reseed-tools, distributing signed SU3 bootstrap bundles, with first-boot keys, gated endpoints and a liveness probe.
 
-Fork of [reseed-tools](https://github.com/go-i2p/reseed-tools).
-
 [![Stand with Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://damian-buho.github.io/support-ukraine/) [![Projectfile inside](https://badges.kiota.ch/static/v1?label=projectfile&message=inside&labelColor=0d0d0d&color=8c6723&style=flat-square)](https://projectfile.org) [![License](https://badges.kiota.ch/static/v1?label=license&message=MIT&color=1e5913&style=flat-square)](LICENSE) [![Cosign](https://badges.kiota.ch/static/v1?label=cosign&message=enabled&color=1e5913&style=flat-square)](https://docs.sigstore.dev/cosign/verifying/verify/) ![ClamAV scanned](https://badges.kiota.ch/static/v1?label=clamav&message=scanned&color=1877aa&style=flat-square) [![PRs welcome](https://badges.kiota.ch/static/v1?label=PRs&message=welcome&color=1e5913&style=flat-square)](CONTRIBUTING.md) [![REUSE compliance](https://api.reuse.software/badge/github.com/damian-buho/f5m-i2p-reseed)](https://api.reuse.software/info/github.com/damian-buho/f5m-i2p-reseed)
 
 ![Project status](https://badges.kiota.ch/static/v1?label=status&message=maintained&color=1d63ed&style=flat-square) [![Last commit on GitHub](https://badges.kiota.ch/github/last-commit/damian-buho/f5m-i2p-reseed?label=last%20commit%20on%20GitHub&style=flat-square)](https://github.com/damian-buho/f5m-i2p-reseed) [![Last commit on kiota.ch](https://badges.kiota.ch/gitea/last-commit/f5m/i2p-reseed?gitea_url=https://kiota.ch&label=last%20commit%20on%20kiota.ch&style=flat-square)](https://kiota.ch/f5m/i2p-reseed)
@@ -159,8 +157,13 @@ See the [Roadmap](docs/ROADMAP.md) for what is planned next.
 
 - [Projectfile Specification](https://projectfile.org)
 
-Related projects: [F5M/Tor](https://kiota.ch/f5m/tor) | [F5M/I2P](https://kiota.ch/f5m/i2p) | [F5M/Tor Snowflake](https://kiota.ch/f5m/tor-snowflake) | [F5M/OONI Probe](https://kiota.ch/f5m/ooni) | [F5M/Knot](https://kiota.ch/f5m/knot) | [F5M/Radicle](https://kiota.ch/f5m/radicle) | [F5M/Solid](https://kiota.ch/f5m/solid) | [F5M/SSH](https://kiota.ch/f5m/ssh)
+Related projects: [F5M / I2P](https://kiota.ch/f5m/i2p)
+
+## Upstream
+
+This project is a fork of [reseed-tools](https://github.com/go-i2p/reseed-tools) (`MIT`).
+Thanks to: The go-i2p contributors
 
 ## License
 
-The packaging in this repository is licensed under MIT — see the [LICENSE](LICENSE) file for details. reseed-tools is distributed under its own license, `MIT`.
+The packaging in this repository is licensed under MIT — see the [LICENSE](LICENSE) file for details.

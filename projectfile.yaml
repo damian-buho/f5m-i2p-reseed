@@ -116,7 +116,8 @@ repositories:
 technologies:
   - go
 upstream:
-  - license: MIT
+  - authors: The go-i2p contributors
+    license: MIT
     name: reseed-tools
     relation: fork
     url: https://github.com/go-i2p/reseed-tools
