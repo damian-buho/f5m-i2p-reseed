@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i2p-reseed development\n"
-"Report-Msgid-Bugs-To: https://codeberg.org/f5m/i2p-reseed/issues\n"
-"POT-Creation-Date: 2026-09-05 02:50+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/damian-buho/f5m-i2p-reseed/issues\n"
+"POT-Creation-Date: 2026-10-30 21:40+0000\n"
 "PO-Revision-Date: 2026-08-22 19:13+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,15 +16,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .container/base/build.d/base/post/010-i2p-probe-marker.sh:8
+#: .container/base/build.d/base/post/010-i2p-probe-marker.sh:10
 msgid "Creating I2P probe marker"
 msgstr ""
 
-#: .container/base/build.d/base/post/010-i2p-probe-marker.sh:11
+#: .container/base/build.d/base/post/010-i2p-probe-marker.sh:13
 msgid "Marking I2P probe file executable"
 msgstr ""
 
-#: .container/compile-go/build.d/compile-go/post/100-download-source.sh:9
+#: .container/compile-go/build.d/compile-go/post/100-download-source.sh:11
 msgid "Extract %s/%s"
 msgstr "Extraer %s/%s"
 
@@ -37,7 +37,7 @@ msgid "Build"
 msgstr "Compilar"
 
 #: .container/compile-go/build.d/compile-go/post/500-build-reseed-tools.sh:17
-#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:167
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:165
 msgid "Make directory in export"
 msgstr "Crear directorio en export"
 
@@ -45,20 +45,20 @@ msgstr "Crear directorio en export"
 msgid "Copy executable to export"
 msgstr "Copiar ejecutable a export"
 
-#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:10
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:8
 msgid "Building reseed-fixture helper"
 msgstr ""
 
-#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:162
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:160
 msgid "Compile reseed-fixture"
 msgstr ""
 
-#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:170
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:168
 #, fuzzy
 msgid "Copy fixture helper to export"
 msgstr "Copiar ejecutable a export"
 
-#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:173
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:171
 msgid "Clean fixture source"
 msgstr ""
 
@@ -76,15 +76,16 @@ msgstr "Iniciando servidor reseed en %s:%s (firmante %s)"
 msgid "SU3 rate limit %s/h"
 msgstr "Límite de tasa SU3: %s/h"
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:23
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:26
 msgid "Reseed health cache lock timed out on %s"
-msgstr "Se agotó el tiempo de espera del bloqueo de caché de salud de reseed en %s"
+msgstr ""
+"Se agotó el tiempo de espera del bloqueo de caché de salud de reseed en %s"
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:32
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:35
 msgid "%s (cached, %ss old)"
 msgstr "%s (en caché, con %ss de antigüedad)"
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:66
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:71
 msgid ""
 "Reseed server unhealthy: /i2pseeds.su3 returned HTTP %s (size %s, reseed-"
 "tools %s)"
@@ -92,33 +93,38 @@ msgstr ""
 "Servidor reseed no sano: /i2pseeds.su3 devolvió HTTP %s (tamaño %s, reseed-"
 "tools %s)"
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:70
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:75
 msgid "Reseed server unhealthy: missing Version header (HTTP %s, size %s)"
-msgstr "Servidor reseed no sano: falta la cabecera Version (HTTP %s, tamaño %s)"
+msgstr ""
+"Servidor reseed no sano: falta la cabecera Version (HTTP %s, tamaño %s)"
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:74
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:79
 msgid "Reseed server unhealthy: SU3 too small (%s bytes)"
 msgstr "Servidor reseed no sano: SU3 demasiado pequeño (%s bytes)"
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:89
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:94
 msgid "Reseed server unhealthy: bad SU3 magic on /i2pseeds.su3 (size %s)"
-msgstr "Servidor reseed no sano: número mágico SU3 incorrecto en /i2pseeds.su3 (tamaño %s)"
+msgstr ""
+"Servidor reseed no sano: número mágico SU3 incorrecto en /i2pseeds.su3 "
+"(tamaño %s)"
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:93
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:98
 msgid "Reseed server unhealthy: expected ZIP (0), got FileType %s"
 msgstr "Servidor reseed no sano: se esperaba ZIP (0), se obtuvo FileType %s"
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:97
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:102
 msgid "Reseed server unhealthy: expected Reseed (3), got ContentType %s"
-msgstr "Servidor reseed no sano: se esperaba Reseed (3), se obtuvo ContentType %s"
+msgstr ""
+"Servidor reseed no sano: se esperaba Reseed (3), se obtuvo ContentType %s"
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:105
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:110
 msgid "Reseed server unhealthy: SU3 body is not a ZIP (size %s)"
 msgstr "Servidor reseed no sano: el cuerpo SU3 no es un ZIP (tamaño %s)"
 
-#: .container/user/healthcheck.d/1100-check-reseed-health.sh:108
+#: .container/user/healthcheck.d/1100-check-reseed-health.sh:113
 msgid "Reseed server healthy on port %s (HTTP 200, %s bytes, reseed-tools %s)"
-msgstr "Servidor reseed sano en el puerto %s (HTTP 200, %s bytes, reseed-tools %s)"
+msgstr ""
+"Servidor reseed sano en el puerto %s (HTTP 200, %s bytes, reseed-tools %s)"
 
 #: .container/user/bootstrap.d/100-generate-keys.sh:16
 msgid "F5M_I2P_RESEED_SIGNER is empty, skipping key generation"
@@ -169,6 +175,202 @@ msgstr ""
 msgid ""
 "reseed-fixture not found, skipping synthetic netDb seed — healthcheck may "
 "fail on empty netDb"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:14
+msgid "Starting b19-exec tests"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:28
+msgid "%s still false after %s tries"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:33
+msgid "Test 1: Successful command execution"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:37
+msgid "Test 1 passed: Successful exit code"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:39
+msgid "Test 1 failed: Wrong exit code"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:44
+msgid "Test 2: Failed command exit code propagation"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:48
+msgid "Test 2 passed: Exit code 42 propagated"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:50
+msgid "Test 2 failed: Exit code %s (expected 42)"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:55
+msgid "Test 3: Command execution with side effects"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:59
+msgid "Test 3 passed: Command executed with side effects"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:62
+msgid "Test 3 failed: File not created"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:67
+msgid "Test 4: Missing command error"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:71
+msgid "Test 4 passed: Missing command detected"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:73
+msgid "Test 4 failed: Missing command not detected"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:78
+msgid "Test 5: Invalid log level error"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:82
+msgid "Test 5 passed: Invalid level detected"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:84
+msgid "Test 5 failed: Invalid level not rejected"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:89
+msgid "Test 6: Command with multiple arguments"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:93
+msgid "Test 6 passed: Arguments passed correctly"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:96
+msgid "Test 6 failed: Arguments not passed correctly"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:101
+msgid "Test 7: Foreground mode"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:105
+msgid "Test 7 passed: Foreground mode works"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:107
+msgid "Test 7 failed: Foreground mode error (code %s)"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:112
+msgid "Test 8: Output routing through b19-log"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:116
+msgid "Test 8 passed: Output routed through b19-log"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:119
+msgid "Test 8 skipped: Output routing cannot be fully tested in test context"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:124
+msgid "Test 9: Custom log levels"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:128
+msgid "Test 9 passed: Custom levels accepted"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:130
+msgid "Test 9 failed: Custom levels rejected"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:135
+msgid "Test 10: Custom tags"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:139
+msgid "Test 10 passed: Custom tags accepted"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:141
+msgid "Test 10 failed: Custom tags rejected"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:146
+msgid "Test 11: Stderr drain on failed command"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:150
+msgid "Test 11 passed: Exit code propagated and stderr drained"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:152
+msgid "Test 11 failed: Exit code %s (expected 5)"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:157
+msgid "Test 12: Foreground mode exit code propagation"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:161
+msgid "Test 12 passed: Foreground mode exit code propagated"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:163
+msgid "Test 12 failed: Exit code %s (expected 7)"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:168
+msgid "Test 13: Payload PID record published and cleaned up"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:186
+msgid "Test 14: Passthrough bypasses b19-log"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:202
+msgid "Test 15: Invalid passthrough value"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:231
+msgid "%s still recorded after %s tries"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:240
+msgid "Test 16: Background daemons stop in reverse start order"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:257
+msgid "Test 16b: Stop while the payload starts"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:270
+msgid "Test 17: Required daemon exit fails fast"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:285
+msgid "Test 18: Optional daemon exit keeps the payload"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:304
+msgid "Test 19: Health check and stop on payload exit"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:311
+msgid "Test 20: Invalid background calls"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:327
+msgid "All b19-exec tests passed"
 msgstr ""
 
 #: .container/user/test.d/1500-verify-binary.sh:14

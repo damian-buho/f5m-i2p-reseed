@@ -9,8 +9,4 @@ set -eou pipefail
   ACTUAL=$(get-i2p-reseed-version)
   EXPECTED=$(decomment < /deps/reseed-tools/version.deps)
 
-  if [ "${ACTUAL}" != "${EXPECTED}" ]
-  then
-    echo "FATAL: expected ${EXPECTED}, got ${ACTUAL}" >&2
-    exit 1
-  fi
+  b19-assert equals "I2P_RESEED" "${EXPECTED}" "${ACTUAL}"

@@ -4,9 +4,9 @@
 # SPDX-License-Identifier: MIT
 msgid ""
 msgstr ""
-"Project-Id-Version: i2p-reseed 1.1.3\n"
-"Report-Msgid-Bugs-To: https://codeberg.org/f5m/i2p-reseed/issues\n"
-"POT-Creation-Date: 2026-09-07 03:46+0000\n"
+"Project-Id-Version: i2p-reseed 0.7.3-4-ga6440fc\n"
+"Report-Msgid-Bugs-To: https://github.com/damian-buho/f5m-i2p-reseed/issues\n"
+"POT-Creation-Date: 2026-10-30 21:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,15 +15,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .container/base/build.d/base/post/010-i2p-probe-marker.sh:8
+#: .container/base/build.d/base/post/010-i2p-probe-marker.sh:10
 msgid "Creating I2P probe marker"
 msgstr ""
 
-#: .container/base/build.d/base/post/010-i2p-probe-marker.sh:11
+#: .container/base/build.d/base/post/010-i2p-probe-marker.sh:13
 msgid "Marking I2P probe file executable"
 msgstr ""
 
-#: .container/compile-go/build.d/compile-go/post/100-download-source.sh:9
+#: .container/compile-go/build.d/compile-go/post/100-download-source.sh:11
 msgid "Extract %s/%s"
 msgstr ""
 
@@ -36,7 +36,7 @@ msgid "Build"
 msgstr ""
 
 #: .container/compile-go/build.d/compile-go/post/500-build-reseed-tools.sh:17
-#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:167
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:165
 msgid "Make directory in export"
 msgstr ""
 
@@ -44,19 +44,19 @@ msgstr ""
 msgid "Copy executable to export"
 msgstr ""
 
-#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:10
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:8
 msgid "Building reseed-fixture helper"
 msgstr ""
 
-#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:162
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:160
 msgid "Compile reseed-fixture"
 msgstr ""
 
-#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:170
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:168
 msgid "Copy fixture helper to export"
 msgstr ""
 
-#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:173
+#: .container/compile-go/build.d/compile-go/post/600-build-fixture.sh:171
 msgid "Clean fixture source"
 msgstr ""
 
@@ -163,6 +163,202 @@ msgstr ""
 msgid ""
 "reseed-fixture not found, skipping synthetic netDb seed — healthcheck may "
 "fail on empty netDb"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:14
+msgid "Starting b19-exec tests"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:28
+msgid "%s still false after %s tries"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:33
+msgid "Test 1: Successful command execution"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:37
+msgid "Test 1 passed: Successful exit code"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:39
+msgid "Test 1 failed: Wrong exit code"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:44
+msgid "Test 2: Failed command exit code propagation"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:48
+msgid "Test 2 passed: Exit code 42 propagated"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:50
+msgid "Test 2 failed: Exit code %s (expected 42)"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:55
+msgid "Test 3: Command execution with side effects"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:59
+msgid "Test 3 passed: Command executed with side effects"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:62
+msgid "Test 3 failed: File not created"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:67
+msgid "Test 4: Missing command error"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:71
+msgid "Test 4 passed: Missing command detected"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:73
+msgid "Test 4 failed: Missing command not detected"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:78
+msgid "Test 5: Invalid log level error"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:82
+msgid "Test 5 passed: Invalid level detected"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:84
+msgid "Test 5 failed: Invalid level not rejected"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:89
+msgid "Test 6: Command with multiple arguments"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:93
+msgid "Test 6 passed: Arguments passed correctly"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:96
+msgid "Test 6 failed: Arguments not passed correctly"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:101
+msgid "Test 7: Foreground mode"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:105
+msgid "Test 7 passed: Foreground mode works"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:107
+msgid "Test 7 failed: Foreground mode error (code %s)"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:112
+msgid "Test 8: Output routing through b19-log"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:116
+msgid "Test 8 passed: Output routed through b19-log"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:119
+msgid "Test 8 skipped: Output routing cannot be fully tested in test context"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:124
+msgid "Test 9: Custom log levels"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:128
+msgid "Test 9 passed: Custom levels accepted"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:130
+msgid "Test 9 failed: Custom levels rejected"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:135
+msgid "Test 10: Custom tags"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:139
+msgid "Test 10 passed: Custom tags accepted"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:141
+msgid "Test 10 failed: Custom tags rejected"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:146
+msgid "Test 11: Stderr drain on failed command"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:150
+msgid "Test 11 passed: Exit code propagated and stderr drained"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:152
+msgid "Test 11 failed: Exit code %s (expected 5)"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:157
+msgid "Test 12: Foreground mode exit code propagation"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:161
+msgid "Test 12 passed: Foreground mode exit code propagated"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:163
+msgid "Test 12 failed: Exit code %s (expected 7)"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:168
+msgid "Test 13: Payload PID record published and cleaned up"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:186
+msgid "Test 14: Passthrough bypasses b19-log"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:202
+msgid "Test 15: Invalid passthrough value"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:231
+msgid "%s still recorded after %s tries"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:240
+msgid "Test 16: Background daemons stop in reverse start order"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:257
+msgid "Test 16b: Stop while the payload starts"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:270
+msgid "Test 17: Required daemon exit fails fast"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:285
+msgid "Test 18: Optional daemon exit keeps the payload"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:304
+msgid "Test 19: Health check and stop on payload exit"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:311
+msgid "Test 20: Invalid background calls"
+msgstr ""
+
+#: .container/user/test.d/0200-b19-exec.sh:327
+msgid "All b19-exec tests passed"
 msgstr ""
 
 #: .container/user/test.d/1500-verify-binary.sh:14
