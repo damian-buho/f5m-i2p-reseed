@@ -18,6 +18,11 @@ I2P reseed server based on go-i2p/reseed-tools, distributing signed SU3 bootstra
 
 [![Publish pipeline on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/published.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Vulnerability audit on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/audited.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Dependency freshness on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/check-outdated.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Analysis sweep on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/analyzed.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions)
 
+## Upstream
+
+This project is a fork of [reseed-tools](https://github.com/go-i2p/reseed-tools) (`MIT`).
+Thanks to: Matt Drollette (original author) and idk (eyedeekay, maintainer)
+
 ## Features
 
 - Abuse-resistant by default
@@ -158,11 +163,6 @@ See the [Roadmap](docs/ROADMAP.md) for what is planned next.
 - [Projectfile Specification](https://projectfile.org)
 
 Related projects: [F5M / I2P](https://kiota.ch/f5m/i2p)
-
-## Upstream
-
-This project is a fork of [reseed-tools](https://github.com/go-i2p/reseed-tools) (`MIT`).
-Thanks to: The go-i2p contributors
 
 ## License
 

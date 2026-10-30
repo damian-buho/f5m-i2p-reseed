@@ -116,7 +116,10 @@ repositories:
 technologies:
   - go
 upstream:
-  - authors: The go-i2p contributors
+  - authors:
+      en: Matt Drollette (original author) and idk (eyedeekay, maintainer)
+      es: Matt Drollette (autor original) e idk (eyedeekay, mantenedor)
+      uk: Matt Drollette (початковий автор) та idk (eyedeekay, супровідник)
     license: MIT
     name: reseed-tools
     relation: fork

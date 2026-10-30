@@ -20,6 +20,11 @@ Servidor reseed de I2P basado en go-i2p/reseed-tools, que distribuye bundles SU3
 
 [![Publish pipeline on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/published.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Vulnerability audit on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/audited.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Dependency freshness on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/check-outdated.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Analysis sweep on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/analyzed.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions)
 
+## Proyecto original
+
+Este proyecto es una bifurcación de [reseed-tools](https://github.com/go-i2p/reseed-tools) (`MIT`).
+Gracias a: Matt Drollette (autor original) e idk (eyedeekay, mantenedor)
+
 ## Características
 
 - Resistente al abuso por defecto
@@ -160,11 +165,6 @@ Consulta la [Hoja de ruta](../ROADMAP.md) para ver lo que viene.
 - [Especificación de Projectfile](https://projectfile.org)
 
 Proyectos relacionados: [F5M / I2P](https://kiota.ch/f5m/i2p)
-
-## Proyecto original
-
-Este proyecto es una bifurcación de [reseed-tools](https://github.com/go-i2p/reseed-tools) (`MIT`).
-Gracias a: The go-i2p contributors
 
 ## Licencia
 

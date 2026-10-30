@@ -20,6 +20,11 @@ Reseed-сервер I2P на основі go-i2p/reseed-tools, що роздає
 
 [![Publish pipeline on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/published.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Vulnerability audit on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/audited.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Dependency freshness on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/check-outdated.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions) [![Analysis sweep on kiota.ch](https://kiota.ch/f5m/i2p-reseed/badges/workflows/analyzed.yaml/badge.svg?style=flat-square)](https://kiota.ch/f5m/i2p-reseed/actions)
 
+## Першоджерело
+
+Цей проєкт є форком [reseed-tools](https://github.com/go-i2p/reseed-tools) (`MIT`).
+Дякуємо: Matt Drollette (початковий автор) та idk (eyedeekay, супровідник)
+
 ## Можливості
 
 - Стійкість до зловживань усталено
@@ -160,11 +165,6 @@ make container-build
 - [Специфікація Projectfile](https://projectfile.org)
 
 Пов’язані проєкти: [F5M / I2P](https://kiota.ch/f5m/i2p)
-
-## Першоджерело
-
-Цей проєкт є форком [reseed-tools](https://github.com/go-i2p/reseed-tools) (`MIT`).
-Дякуємо: The go-i2p contributors
 
 ## Ліцензія
 
