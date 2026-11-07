@@ -15,8 +15,8 @@ identity:
     en: I2P reseed server based on go-i2p/reseed-tools, distributing signed SU3 bootstrap bundles, with first-boot keys, gated endpoints and a liveness probe.
     es: Servidor reseed de I2P basado en go-i2p/reseed-tools, que distribuye bundles SU3 firmados, con claves al primer arranque, endpoints limitados y sonda de vida.
     uk: Reseed-сервер I2P на основі go-i2p/reseed-tools, що роздає підписані SU3-бандли, з ключами при першому старті, лімітованими ендпоїнтами та пробою живучості.
-  version: 0.8.1
-  released: "2026-11-03"
+  version: 0.8.2
+  released: "2026-11-07"
   visibility: public
 includes:
   - .makefile/b19/ci.yaml
