@@ -10,79 +10,221 @@
 # pf-cli-managed: yes
 
 ignore:
+  # SSH clients receiving SSH_AGENT_SUCCESS when expecting a typed response will panic and cause early termination of the c…
+  # https://nvd.nist.gov/vuln/detail/CVE-2025-47913
   - vulnerability: CVE-2025-47913  # blocked by upstream
-  - vulnerability: CVE-2026-116587  # blocked by upstream
+  # Invoking incorrect handling of character references in DOCTYPE nodes in golang.org/x/net/html
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-25681
   - vulnerability: CVE-2026-25681  # blocked by upstream
+  # Invoking duplicate attributes can cause XSS in golang.org/x/net/html
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-27136
   - vulnerability: CVE-2026-27136  # blocked by upstream
+  # Infinite loop in HTTP/2 transport when given bad SETTINGS_MAX_FRAME_SIZE in net/http/internal/http2 in golang.org/x/net
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-33814
   - vulnerability: CVE-2026-33814  # blocked by upstream
+  # Invoking failure to reject ASCII-only Punycode-encoded labels in golang.org/x/net/idna
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-39821
   - vulnerability: CVE-2026-39821  # blocked by upstream
+  # Invoking memory leak when rejecting channels can lead to DoS in golang.org/x/crypto/ssh
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-39827
   - vulnerability: CVE-2026-39827  # blocked by upstream
+  # Invoking bypass of certificate restrictions in golang.org/x/crypto/ssh
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-39828
   - vulnerability: CVE-2026-39828  # blocked by upstream
+  # Invoking pathological RSA/DSA parameters may cause DoS in golang.org/x/crypto/ssh
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-39829
   - vulnerability: CVE-2026-39829  # blocked by upstream
+  # Invoking client can cause server deadlock on unexpected responses in golang.org/x/crypto/ssh
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-39830
   - vulnerability: CVE-2026-39830  # blocked by upstream
+  # Invoking bypass of FIDO/U2F security keys physical interaction in golang.org/x/crypto/ssh
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-39831
   - vulnerability: CVE-2026-39831  # blocked by upstream
+  # Invoking agent constraints dropped when forwarding keys in golang.org/x/crypto/ssh/agent
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-39832
   - vulnerability: CVE-2026-39832  # blocked by upstream
+  # Invoking key constraints not enforced in golang.org/x/crypto/ssh/agent
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-39833
   - vulnerability: CVE-2026-39833  # blocked by upstream
+  # Invoking infinite loop on large channel writes in golang.org/x/crypto/ssh
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-39834
   - vulnerability: CVE-2026-39834  # blocked by upstream
+  # Invoking server panic during CheckHostKey/Authenticate in golang.org/x/crypto/ssh
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-39835
   - vulnerability: CVE-2026-39835  # blocked by upstream
+  # Lego: Arbitrary File Write via Path Traversal in Webroot HTTP-01 Provider
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-40611
   - vulnerability: CVE-2026-40611  # unfixable upstream dependency; fixable only via upstream release
+  # Invoking incorrect handling of HTML elements in foreign content in golang.org/x/net/html
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-42502
   - vulnerability: CVE-2026-42502  # blocked by upstream
+  # Invoking auth bypass via unenforced @revoked status in golang.org/x/crypto/ssh/knownhosts
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-42508
   - vulnerability: CVE-2026-42508  # blocked by upstream
+  # Invoking VerifiedPublicKeyCallback permissions skip enforcement in golang.org/x/crypto/ssh
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-46595
   - vulnerability: CVE-2026-46595  # blocked by upstream
+  # Invoking byte arithmetic causes underflow and panic in golang.org/x/crypto/ssh
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-46597
   - vulnerability: CVE-2026-46597  # blocked by upstream
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-46600
   - vulnerability: CVE-2026-46600  # blocked by upstream
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-56851
   - vulnerability: CVE-2026-56851  # blocked by upstream
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-56852
   - vulnerability: CVE-2026-56852  # blocked by upstream
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-56854
   - vulnerability: CVE-2026-56854  # blocked by upstream
+  # Prevent DoS on deadlocked established channel in golang.org/x/crypto/ssh
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-56855
   - vulnerability: CVE-2026-56855  # blocked by upstream
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-78659
   - vulnerability: CVE-2026-78659  # blocked by upstream
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-78660
   - vulnerability: CVE-2026-78660  # blocked by upstream
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-78661
   - vulnerability: CVE-2026-78661  # blocked by upstream
+  # Prevent DoS on deadlocked undecided channel in golang.org/x/crypto/ssh
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-78662
   - vulnerability: CVE-2026-78662  # blocked by upstream
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-78663
   - vulnerability: CVE-2026-78663  # blocked by upstream
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-78669
   - vulnerability: CVE-2026-78669  # blocked by upstream
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-97032
   - vulnerability: CVE-2026-97032  # blocked by upstream
-  - vulnerability: GHSA-45gg-vh54-h5m9  # blocked by upstream
-  - vulnerability: GHSA-56w8-48fp-6mgv  # blocked by upstream
+  # Go JOSE: DoS when parsing JWKs that contain RSA keys
+  # https://nvd.nist.gov/vuln/detail/CVE-2026-116587
+  - vulnerability: CVE-2026-116587  # blocked by upstream
+  # golang.org/x/crypto vulnerable to auth bypass via unenforced @revoked status
+  # https://github.com/advisories/GHSA-5cgq-3rg8-m6cv
   - vulnerability: GHSA-5cgq-3rg8-m6cv  # blocked by upstream
+  # golang.org/x/crypto vulnerable to invoking bypass of certificate restrictions
+  # https://github.com/advisories/GHSA-45gg-vh54-h5m9
+  - vulnerability: GHSA-45gg-vh54-h5m9  # blocked by upstream
+  # golang.org/x/crypto/ssh/agent has a potential denial of service
+  # https://github.com/advisories/GHSA-56w8-48fp-6mgv
+  - vulnerability: GHSA-56w8-48fp-6mgv  # blocked by upstream
+  # golang.org/x/crypto is vulnerable to invoking server panic during CheckHostKey/Authenticate flow
+  # https://github.com/advisories/GHSA-78mq-xcr3-xm33
   - vulnerability: GHSA-78mq-xcr3-xm33  # blocked by upstream
+  # golang.org/x/crypto: FIDO/U2F security key physical presence check can be bypassed
+  # https://github.com/advisories/GHSA-89gr-r52h-f8rx
   - vulnerability: GHSA-89gr-r52h-f8rx  # blocked by upstream
+  # golang.org/x/crypto doesn't drop invoking agent constraints when forwarding keys
+  # https://github.com/advisories/GHSA-f5wc-c3c7-36mc
   - vulnerability: GHSA-f5wc-c3c7-36mc  # blocked by upstream
+  # golang.org/x/crypto doesn't enforce invoking key constraints
+  # https://github.com/advisories/GHSA-jppx-rxg9-jmrx
   - vulnerability: GHSA-jppx-rxg9-jmrx  # blocked by upstream
+  # Go JOSE: DoS when parsing JWKs that contain RSA keys
+  # https://github.com/advisories/GHSA-mgcc-cww5-fp2q
   - vulnerability: GHSA-mgcc-cww5-fp2q  # blocked by upstream
+  # golang.org/x/crypto: Invoking byte arithmetic causes underflow and panic
+  # https://github.com/advisories/GHSA-q4h4-gmj2-qvw2
   - vulnerability: GHSA-q4h4-gmj2-qvw2  # blocked by upstream
+  # golang.org/x/crypto: Invoking memory leak when rejecting channels can lead to DoS
+  # https://github.com/advisories/GHSA-qpw4-5x99-6vjp
   - vulnerability: GHSA-qpw4-5x99-6vjp  # blocked by upstream
+  # ACME Lego: Arbitrary File Write via Path Traversal in Webroot HTTP-01 Provider
+  # https://github.com/advisories/GHSA-qqx8-2xmm-jrv8
   - vulnerability: GHSA-qqx8-2xmm-jrv8  # unfixable upstream dependency; fixable only via upstream release
+  # golang.org/x/crypto vulnerable to infinite loop on large channel writes
+  # https://github.com/advisories/GHSA-rm3j-f69w-wqmq
   - vulnerability: GHSA-rm3j-f69w-wqmq  # blocked by upstream
+  # golang.org/x/crypto: Invoking client can cause server deadlock on unexpected responses
+  # https://github.com/advisories/GHSA-vgwf-h737-ff37
   - vulnerability: GHSA-vgwf-h737-ff37  # blocked by upstream
+  # golang.org/x/crypto: Invoking pathological RSA/DSA parameters may cause DoS
+  # https://github.com/advisories/GHSA-w879-237q-wc7r
   - vulnerability: GHSA-w879-237q-wc7r  # blocked by upstream
+  # golang.org/x/crypto: Invoking VerifiedPublicKeyCallback permissions skip enforcement
+  # https://github.com/advisories/GHSA-x527-x647-q7gg
   - vulnerability: GHSA-x527-x647-q7gg  # blocked by upstream
+  # Potential denial of service in golang.org/x/crypto/ssh/agent
+  # https://pkg.go.dev/vuln/GO-2025-4116
   - vulnerability: GO-2025-4116  # blocked by upstream
+  # Infinite loop in HTTP/2 transport when given bad SETTINGS_MAX_FRAME_SIZE in net/http/internal/http2 in golang.org/x/net
+  # https://pkg.go.dev/vuln/GO-2026-4918
   - vulnerability: GO-2026-4918  # blocked by upstream
+  # Invoking key constraints not enforced in golang.org/x/crypto/ssh/agent
+  # https://pkg.go.dev/vuln/GO-2026-5005
   - vulnerability: GO-2026-5005  # blocked by upstream
+  # Invoking agent constraints dropped when forwarding keys in golang.org/x/crypto/ssh/agent
+  # https://pkg.go.dev/vuln/GO-2026-5006
   - vulnerability: GO-2026-5006  # blocked by upstream
+  # Invoking byte arithmetic causes underflow and panic in golang.org/x/crypto/ssh
+  # https://pkg.go.dev/vuln/GO-2026-5013
   - vulnerability: GO-2026-5013  # blocked by upstream
+  # Invoking bypass of certificate restrictions in golang.org/x/crypto/ssh
+  # https://pkg.go.dev/vuln/GO-2026-5014
   - vulnerability: GO-2026-5014  # blocked by upstream
+  # Invoking server panic during CheckHostKey/Authenticate in golang.org/x/crypto/ssh
+  # https://pkg.go.dev/vuln/GO-2026-5015
   - vulnerability: GO-2026-5015  # blocked by upstream
+  # Invoking client can cause server deadlock on unexpected responses in golang.org/x/crypto/ssh
+  # https://pkg.go.dev/vuln/GO-2026-5017
   - vulnerability: GO-2026-5017  # blocked by upstream
+  # Invoking pathological RSA/DSA parameters may cause DoS in golang.org/x/crypto/ssh
+  # https://pkg.go.dev/vuln/GO-2026-5018
   - vulnerability: GO-2026-5018  # blocked by upstream
+  # Invoking bypass of FIDO/U2F security keys physical interaction in golang.org/x/crypto/ssh
+  # https://pkg.go.dev/vuln/GO-2026-5019
   - vulnerability: GO-2026-5019  # blocked by upstream
+  # Invoking infinite loop on large channel writes in golang.org/x/crypto/ssh
+  # https://pkg.go.dev/vuln/GO-2026-5020
   - vulnerability: GO-2026-5020  # blocked by upstream
+  # Invoking auth bypass via unenforced @revoked status in golang.org/x/crypto/ssh/knownhosts
+  # https://pkg.go.dev/vuln/GO-2026-5021
   - vulnerability: GO-2026-5021  # blocked by upstream
+  # Invoking VerifiedPublicKeyCallback permissions skip enforcement in golang.org/x/crypto/ssh
+  # https://pkg.go.dev/vuln/GO-2026-5023
   - vulnerability: GO-2026-5023  # blocked by upstream
+  # Invoking failure to reject ASCII-only Punycode-encoded labels in golang.org/x/net/idna
+  # https://pkg.go.dev/vuln/GO-2026-5026
   - vulnerability: GO-2026-5026  # blocked by upstream
+  # Invoking incorrect handling of HTML elements in foreign content in golang.org/x/net/html
+  # https://pkg.go.dev/vuln/GO-2026-5027
   - vulnerability: GO-2026-5027  # blocked by upstream
+  # Invoking incorrect handling of character references in DOCTYPE nodes in golang.org/x/net/html
+  # https://pkg.go.dev/vuln/GO-2026-5029
   - vulnerability: GO-2026-5029  # blocked by upstream
+  # Invoking duplicate attributes can cause XSS in golang.org/x/net/html
+  # https://pkg.go.dev/vuln/GO-2026-5030
   - vulnerability: GO-2026-5030  # blocked by upstream
+  # Parsing an invalid SVCB or HTTPS RR can panic in golang.org/x/net/dns/dnsmessage
+  # https://pkg.go.dev/vuln/GO-2026-5942
   - vulnerability: GO-2026-5942  # blocked by upstream
+  # Infinite loop on invalid input in golang.org/x/text
+  # https://pkg.go.dev/vuln/GO-2026-5970
   - vulnerability: GO-2026-5970  # blocked by upstream
+  # Source-address critical option not enforced for non-public-key auth callbacks in golang.org/x/crypto/ssh
+  # https://pkg.go.dev/vuln/GO-2026-6303
   - vulnerability: GO-2026-6303  # blocked by upstream
+  # Prevent DoS on deadlocked undecided channel in golang.org/x/crypto/ssh
+  # https://pkg.go.dev/vuln/GO-2026-6354
   - vulnerability: GO-2026-6354  # blocked by upstream
+  # Prevent DoS on deadlocked established channel in golang.org/x/crypto/ssh
+  # https://pkg.go.dev/vuln/GO-2026-6355
   - vulnerability: GO-2026-6355  # blocked by upstream
+  # HTTP/2 server memory exhaustion due to Trailer headers in net/http
+  # https://pkg.go.dev/vuln/GO-2026-6603
   - vulnerability: GO-2026-6603  # blocked by upstream
+  # HTTP/2 transport accepts malformed framing-related headers in net/http
+  # https://pkg.go.dev/vuln/GO-2026-6610
   - vulnerability: GO-2026-6610  # blocked by upstream
+  # Excessive CPU consumption from repeated initial window changes in net/http
+  # https://pkg.go.dev/vuln/GO-2026-6611
   - vulnerability: GO-2026-6611  # blocked by upstream
+  # Double flow control refund on HTTP/2 server streams in net/http
+  # https://pkg.go.dev/vuln/GO-2026-6612
   - vulnerability: GO-2026-6612  # blocked by upstream
+  # HTTP/2 server crash due to HPACK encoder race in net/http
+  # https://pkg.go.dev/vuln/GO-2026-6617
   - vulnerability: GO-2026-6617  # blocked by upstream
+  # Panic parsing crafted input in x/text/secure/precis in golang.org/x/text
+  # https://pkg.go.dev/vuln/GO-2026-6629
   - vulnerability: GO-2026-6629  # blocked by upstream
+  # Avoid quadratic complexity when coalescing text nodes in html in golang.org/x/net
+  # https://pkg.go.dev/vuln/GO-2026-6860
   - vulnerability: GO-2026-6860  # blocked by upstream

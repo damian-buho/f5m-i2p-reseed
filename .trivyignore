@@ -8,79 +8,296 @@
 # direct edits here are overwritten on the next generation.
 # pf-cli-managed: yes
 
+# SSH clients receiving SSH_AGENT_SUCCESS when expecting a typed response will panic and cause early termination of the c…
+# https://nvd.nist.gov/vuln/detail/CVE-2025-47913
 CVE-2025-47913
-CVE-2026-116587
+
+# Invoking incorrect handling of character references in DOCTYPE nodes in golang.org/x/net/html
+# https://nvd.nist.gov/vuln/detail/CVE-2026-25681
 CVE-2026-25681
+
+# Invoking duplicate attributes can cause XSS in golang.org/x/net/html
+# https://nvd.nist.gov/vuln/detail/CVE-2026-27136
 CVE-2026-27136
+
+# Infinite loop in HTTP/2 transport when given bad SETTINGS_MAX_FRAME_SIZE in net/http/internal/http2 in golang.org/x/net
+# https://nvd.nist.gov/vuln/detail/CVE-2026-33814
 CVE-2026-33814
+
+# Invoking failure to reject ASCII-only Punycode-encoded labels in golang.org/x/net/idna
+# https://nvd.nist.gov/vuln/detail/CVE-2026-39821
 CVE-2026-39821
+
+# Invoking memory leak when rejecting channels can lead to DoS in golang.org/x/crypto/ssh
+# https://nvd.nist.gov/vuln/detail/CVE-2026-39827
 CVE-2026-39827
+
+# Invoking bypass of certificate restrictions in golang.org/x/crypto/ssh
+# https://nvd.nist.gov/vuln/detail/CVE-2026-39828
 CVE-2026-39828
+
+# Invoking pathological RSA/DSA parameters may cause DoS in golang.org/x/crypto/ssh
+# https://nvd.nist.gov/vuln/detail/CVE-2026-39829
 CVE-2026-39829
+
+# Invoking client can cause server deadlock on unexpected responses in golang.org/x/crypto/ssh
+# https://nvd.nist.gov/vuln/detail/CVE-2026-39830
 CVE-2026-39830
+
+# Invoking bypass of FIDO/U2F security keys physical interaction in golang.org/x/crypto/ssh
+# https://nvd.nist.gov/vuln/detail/CVE-2026-39831
 CVE-2026-39831
+
+# Invoking agent constraints dropped when forwarding keys in golang.org/x/crypto/ssh/agent
+# https://nvd.nist.gov/vuln/detail/CVE-2026-39832
 CVE-2026-39832
+
+# Invoking key constraints not enforced in golang.org/x/crypto/ssh/agent
+# https://nvd.nist.gov/vuln/detail/CVE-2026-39833
 CVE-2026-39833
+
+# Invoking infinite loop on large channel writes in golang.org/x/crypto/ssh
+# https://nvd.nist.gov/vuln/detail/CVE-2026-39834
 CVE-2026-39834
+
+# Invoking server panic during CheckHostKey/Authenticate in golang.org/x/crypto/ssh
+# https://nvd.nist.gov/vuln/detail/CVE-2026-39835
 CVE-2026-39835
+
+# Lego: Arbitrary File Write via Path Traversal in Webroot HTTP-01 Provider
+# https://nvd.nist.gov/vuln/detail/CVE-2026-40611
 CVE-2026-40611
+
+# Invoking incorrect handling of HTML elements in foreign content in golang.org/x/net/html
+# https://nvd.nist.gov/vuln/detail/CVE-2026-42502
 CVE-2026-42502
+
+# Invoking auth bypass via unenforced @revoked status in golang.org/x/crypto/ssh/knownhosts
+# https://nvd.nist.gov/vuln/detail/CVE-2026-42508
 CVE-2026-42508
+
+# Invoking VerifiedPublicKeyCallback permissions skip enforcement in golang.org/x/crypto/ssh
+# https://nvd.nist.gov/vuln/detail/CVE-2026-46595
 CVE-2026-46595
+
+# Invoking byte arithmetic causes underflow and panic in golang.org/x/crypto/ssh
+# https://nvd.nist.gov/vuln/detail/CVE-2026-46597
 CVE-2026-46597
+
+# https://nvd.nist.gov/vuln/detail/CVE-2026-46600
 CVE-2026-46600
+
+# https://nvd.nist.gov/vuln/detail/CVE-2026-56851
 CVE-2026-56851
+
+# https://nvd.nist.gov/vuln/detail/CVE-2026-56852
 CVE-2026-56852
+
+# https://nvd.nist.gov/vuln/detail/CVE-2026-56854
 CVE-2026-56854
+
+# Prevent DoS on deadlocked established channel in golang.org/x/crypto/ssh
+# https://nvd.nist.gov/vuln/detail/CVE-2026-56855
 CVE-2026-56855
+
+# https://nvd.nist.gov/vuln/detail/CVE-2026-78659
 CVE-2026-78659
+
+# https://nvd.nist.gov/vuln/detail/CVE-2026-78660
 CVE-2026-78660
+
+# https://nvd.nist.gov/vuln/detail/CVE-2026-78661
 CVE-2026-78661
+
+# Prevent DoS on deadlocked undecided channel in golang.org/x/crypto/ssh
+# https://nvd.nist.gov/vuln/detail/CVE-2026-78662
 CVE-2026-78662
+
+# https://nvd.nist.gov/vuln/detail/CVE-2026-78663
 CVE-2026-78663
+
+# https://nvd.nist.gov/vuln/detail/CVE-2026-78669
 CVE-2026-78669
+
+# https://nvd.nist.gov/vuln/detail/CVE-2026-97032
 CVE-2026-97032
-GHSA-45gg-vh54-h5m9
-GHSA-56w8-48fp-6mgv
+
+# Go JOSE: DoS when parsing JWKs that contain RSA keys
+# https://nvd.nist.gov/vuln/detail/CVE-2026-116587
+CVE-2026-116587
+
+# golang.org/x/crypto vulnerable to auth bypass via unenforced @revoked status
+# https://github.com/advisories/GHSA-5cgq-3rg8-m6cv
 GHSA-5cgq-3rg8-m6cv
+
+# golang.org/x/crypto vulnerable to invoking bypass of certificate restrictions
+# https://github.com/advisories/GHSA-45gg-vh54-h5m9
+GHSA-45gg-vh54-h5m9
+
+# golang.org/x/crypto/ssh/agent has a potential denial of service
+# https://github.com/advisories/GHSA-56w8-48fp-6mgv
+GHSA-56w8-48fp-6mgv
+
+# golang.org/x/crypto is vulnerable to invoking server panic during CheckHostKey/Authenticate flow
+# https://github.com/advisories/GHSA-78mq-xcr3-xm33
 GHSA-78mq-xcr3-xm33
+
+# golang.org/x/crypto: FIDO/U2F security key physical presence check can be bypassed
+# https://github.com/advisories/GHSA-89gr-r52h-f8rx
 GHSA-89gr-r52h-f8rx
+
+# golang.org/x/crypto doesn't drop invoking agent constraints when forwarding keys
+# https://github.com/advisories/GHSA-f5wc-c3c7-36mc
 GHSA-f5wc-c3c7-36mc
+
+# golang.org/x/crypto doesn't enforce invoking key constraints
+# https://github.com/advisories/GHSA-jppx-rxg9-jmrx
 GHSA-jppx-rxg9-jmrx
+
+# Go JOSE: DoS when parsing JWKs that contain RSA keys
+# https://github.com/advisories/GHSA-mgcc-cww5-fp2q
 GHSA-mgcc-cww5-fp2q
+
+# golang.org/x/crypto: Invoking byte arithmetic causes underflow and panic
+# https://github.com/advisories/GHSA-q4h4-gmj2-qvw2
 GHSA-q4h4-gmj2-qvw2
+
+# golang.org/x/crypto: Invoking memory leak when rejecting channels can lead to DoS
+# https://github.com/advisories/GHSA-qpw4-5x99-6vjp
 GHSA-qpw4-5x99-6vjp
+
+# ACME Lego: Arbitrary File Write via Path Traversal in Webroot HTTP-01 Provider
+# https://github.com/advisories/GHSA-qqx8-2xmm-jrv8
 GHSA-qqx8-2xmm-jrv8
+
+# golang.org/x/crypto vulnerable to infinite loop on large channel writes
+# https://github.com/advisories/GHSA-rm3j-f69w-wqmq
 GHSA-rm3j-f69w-wqmq
+
+# golang.org/x/crypto: Invoking client can cause server deadlock on unexpected responses
+# https://github.com/advisories/GHSA-vgwf-h737-ff37
 GHSA-vgwf-h737-ff37
+
+# golang.org/x/crypto: Invoking pathological RSA/DSA parameters may cause DoS
+# https://github.com/advisories/GHSA-w879-237q-wc7r
 GHSA-w879-237q-wc7r
+
+# golang.org/x/crypto: Invoking VerifiedPublicKeyCallback permissions skip enforcement
+# https://github.com/advisories/GHSA-x527-x647-q7gg
 GHSA-x527-x647-q7gg
+
+# Potential denial of service in golang.org/x/crypto/ssh/agent
+# https://pkg.go.dev/vuln/GO-2025-4116
 GO-2025-4116
+
+# Infinite loop in HTTP/2 transport when given bad SETTINGS_MAX_FRAME_SIZE in net/http/internal/http2 in golang.org/x/net
+# https://pkg.go.dev/vuln/GO-2026-4918
 GO-2026-4918
+
+# Invoking key constraints not enforced in golang.org/x/crypto/ssh/agent
+# https://pkg.go.dev/vuln/GO-2026-5005
 GO-2026-5005
+
+# Invoking agent constraints dropped when forwarding keys in golang.org/x/crypto/ssh/agent
+# https://pkg.go.dev/vuln/GO-2026-5006
 GO-2026-5006
+
+# Invoking byte arithmetic causes underflow and panic in golang.org/x/crypto/ssh
+# https://pkg.go.dev/vuln/GO-2026-5013
 GO-2026-5013
+
+# Invoking bypass of certificate restrictions in golang.org/x/crypto/ssh
+# https://pkg.go.dev/vuln/GO-2026-5014
 GO-2026-5014
+
+# Invoking server panic during CheckHostKey/Authenticate in golang.org/x/crypto/ssh
+# https://pkg.go.dev/vuln/GO-2026-5015
 GO-2026-5015
+
+# Invoking client can cause server deadlock on unexpected responses in golang.org/x/crypto/ssh
+# https://pkg.go.dev/vuln/GO-2026-5017
 GO-2026-5017
+
+# Invoking pathological RSA/DSA parameters may cause DoS in golang.org/x/crypto/ssh
+# https://pkg.go.dev/vuln/GO-2026-5018
 GO-2026-5018
+
+# Invoking bypass of FIDO/U2F security keys physical interaction in golang.org/x/crypto/ssh
+# https://pkg.go.dev/vuln/GO-2026-5019
 GO-2026-5019
+
+# Invoking infinite loop on large channel writes in golang.org/x/crypto/ssh
+# https://pkg.go.dev/vuln/GO-2026-5020
 GO-2026-5020
+
+# Invoking auth bypass via unenforced @revoked status in golang.org/x/crypto/ssh/knownhosts
+# https://pkg.go.dev/vuln/GO-2026-5021
 GO-2026-5021
+
+# Invoking VerifiedPublicKeyCallback permissions skip enforcement in golang.org/x/crypto/ssh
+# https://pkg.go.dev/vuln/GO-2026-5023
 GO-2026-5023
+
+# Invoking failure to reject ASCII-only Punycode-encoded labels in golang.org/x/net/idna
+# https://pkg.go.dev/vuln/GO-2026-5026
 GO-2026-5026
+
+# Invoking incorrect handling of HTML elements in foreign content in golang.org/x/net/html
+# https://pkg.go.dev/vuln/GO-2026-5027
 GO-2026-5027
+
+# Invoking incorrect handling of character references in DOCTYPE nodes in golang.org/x/net/html
+# https://pkg.go.dev/vuln/GO-2026-5029
 GO-2026-5029
+
+# Invoking duplicate attributes can cause XSS in golang.org/x/net/html
+# https://pkg.go.dev/vuln/GO-2026-5030
 GO-2026-5030
+
+# Parsing an invalid SVCB or HTTPS RR can panic in golang.org/x/net/dns/dnsmessage
+# https://pkg.go.dev/vuln/GO-2026-5942
 GO-2026-5942
+
+# Infinite loop on invalid input in golang.org/x/text
+# https://pkg.go.dev/vuln/GO-2026-5970
 GO-2026-5970
+
+# Source-address critical option not enforced for non-public-key auth callbacks in golang.org/x/crypto/ssh
+# https://pkg.go.dev/vuln/GO-2026-6303
 GO-2026-6303
+
+# Prevent DoS on deadlocked undecided channel in golang.org/x/crypto/ssh
+# https://pkg.go.dev/vuln/GO-2026-6354
 GO-2026-6354
+
+# Prevent DoS on deadlocked established channel in golang.org/x/crypto/ssh
+# https://pkg.go.dev/vuln/GO-2026-6355
 GO-2026-6355
+
+# HTTP/2 server memory exhaustion due to Trailer headers in net/http
+# https://pkg.go.dev/vuln/GO-2026-6603
 GO-2026-6603
+
+# HTTP/2 transport accepts malformed framing-related headers in net/http
+# https://pkg.go.dev/vuln/GO-2026-6610
 GO-2026-6610
+
+# Excessive CPU consumption from repeated initial window changes in net/http
+# https://pkg.go.dev/vuln/GO-2026-6611
 GO-2026-6611
+
+# Double flow control refund on HTTP/2 server streams in net/http
+# https://pkg.go.dev/vuln/GO-2026-6612
 GO-2026-6612
+
+# HTTP/2 server crash due to HPACK encoder race in net/http
+# https://pkg.go.dev/vuln/GO-2026-6617
 GO-2026-6617
+
+# Panic parsing crafted input in x/text/secure/precis in golang.org/x/text
+# https://pkg.go.dev/vuln/GO-2026-6629
 GO-2026-6629
+
+# Avoid quadratic complexity when coalescing text nodes in html in golang.org/x/net
+# https://pkg.go.dev/vuln/GO-2026-6860
 GO-2026-6860
